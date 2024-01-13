@@ -36,8 +36,8 @@ function CategoryPage() {
     <div>
       <div className="product-grid2">
         {currentProducts.length > 0 ? (
-          currentProducts.map((product) => {
-            return <Product product={product}></Product>;
+          currentProducts.map((product, index) => {
+            return <Product key={index} product={product}></Product>;
           })
         ) : (
           <div className="min-h-[50vh]">

@@ -50,7 +50,7 @@ function SocialHeader() {
                 title={
                   <i className="fi-rr-user"></i>
                 }
-                x
+               
                 id="basic-nav-dropdown"
               >
                 <LinkContainer to="/profile">
@@ -135,7 +135,7 @@ function SocialHeader() {
               <section className="border-b py-2">
                 {category && category.map((item, index) => {
                   return (
-                    <Accordion title={item.name}>
+                    <Accordion key={index} title={item.name}>
                       {item.children.length > 0 ? (
                         <div>
                           {item.children && item.children.map((element, index) => {
