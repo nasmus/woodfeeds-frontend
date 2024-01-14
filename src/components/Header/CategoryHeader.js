@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useReducer } from "react";
 import { Link } from "react-router-dom";
-import productImg from "../../css/category-80.jpg";
 
 const reducer = (state, action) => {
   switch (action.type) {

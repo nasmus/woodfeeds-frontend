@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Store } from "../../Store";
-import { getError } from "../../utils";
+//import { getError } from "../../utils";
 
 function SignUpScreen() {
   const navigate = useNavigate();
@@ -45,7 +45,8 @@ function SignUpScreen() {
         }
         
       } catch (err) {
-        toast.error(getError(err));
+        //toast.error(getError(err));
+        console.log(err)
       }
     } else {
       toast.error('Invalid phone number!');
@@ -151,34 +152,6 @@ function SignUpScreen() {
                             Sign In
                           </Link>
                         </p>
-                        {/* <p>or sign up with:</p>
-                        <button
-                          type="button"
-                          className="btn btn-link btn-floating mx-1"
-                        >
-                          <i className="fab fa-facebook-f"></i>
-                        </button>
-
-                        <button
-                          type="button"
-                          className="btn btn-link btn-floating mx-1"
-                        >
-                          <i className="fab fa-google"></i>
-                        </button>
-
-                        <button
-                          type="button"
-                          className="btn btn-link btn-floating mx-1"
-                        >
-                          <i className="fab fa-twitter"></i>
-                        </button>
-
-                        <button
-                          type="button"
-                          className="btn btn-link btn-floating mx-1"
-                        >
-                          <i className="fab fa-github"></i>
-                        </button> */}
                       </div>
                     </form>
                   </div>
