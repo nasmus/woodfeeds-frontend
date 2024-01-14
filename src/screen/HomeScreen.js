@@ -5,9 +5,8 @@ import MessageBox from "../components/MessageBox";
 import Product from "../components/Product";
 import BannerSidebar from "../components/Sidebar/BannerSidebar";
 import "../css/Product.css";
-import side from "../css/side.png";
-import TopRatedProduct from "./ProudctScreen/TopRatedProduct";
 import CategoryProduct from "./ProudctScreen/CategoryProduct";
+import TopRatedProduct from "./ProudctScreen/TopRatedProduct";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -44,7 +43,7 @@ function HomeScreen(props) {
     fatchData();
   }, []);
 
-  const filteredProducts = products.filter(product => product.countInStock > 0);
+  const filteredProducts = products && products.filter(product => product.countInStock > 0);
   return (
     <div>
       {/* {
@@ -65,7 +64,7 @@ function HomeScreen(props) {
             </div>
             <TopRatedProduct />
             <div className="product-grid">
-              {filteredProducts.map((product) => (
+              {filteredProducts && filteredProducts.map((product) => (
                 <Product product={product}></Product>
               ))}
             </div>

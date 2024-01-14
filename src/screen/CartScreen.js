@@ -54,7 +54,7 @@ function CartScreen() {
                       <div className="cartScreen_image_cart items-center">
                         <img
                           style={{ height: "50px" }}
-                          src={`/images/${item.image}`}
+                          src={`${process.env.REACT_APP_IMAGE_URL}/images/${item.image}`}
                           alt={item.name}
                           className="img-fluid rounded img-thumbnail"
                         ></img>

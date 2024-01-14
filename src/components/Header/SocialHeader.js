@@ -50,7 +50,7 @@ function SocialHeader() {
                 title={
                   <i className="fi-rr-user"></i>
                 }
-                x
+               
                 id="basic-nav-dropdown"
               >
                 <LinkContainer to="/profile">
@@ -135,7 +135,8 @@ function SocialHeader() {
               <section className="border-b py-2">
                 {category && category.map((item, index) => {
                   return (
-                    <Accordion title={item.name}>
+                    <Link key={index} className=" no-underline " to={`/category/${item._id}/${item.slug}`} onClick={showSidebar}><Accordion title={item.name}>
+                    
                       {item.children.length > 0 ? (
                         <div>
                           {item.children && item.children.map((element, index) => {
@@ -153,12 +154,13 @@ function SocialHeader() {
                                 </Link>
                               </div>
                             );
-                          })}
+                          })} 
                         </div>
                       ) : (
                         ""
                       )}
                     </Accordion>
+                    </Link>
                   );
                 })}
               </section>
