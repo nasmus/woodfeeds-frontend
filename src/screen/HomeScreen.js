@@ -5,9 +5,8 @@ import MessageBox from "../components/MessageBox";
 import Product from "../components/Product";
 import BannerSidebar from "../components/Sidebar/BannerSidebar";
 import "../css/Product.css";
-import side from "../css/side.png";
-import TopRatedProduct from "./ProudctScreen/TopRatedProduct";
 import CategoryProduct from "./ProudctScreen/CategoryProduct";
+import TopRatedProduct from "./ProudctScreen/TopRatedProduct";
 
 const reducer = (state, action) => {
   switch (action.type) {
