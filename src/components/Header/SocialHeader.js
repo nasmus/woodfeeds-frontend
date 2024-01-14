@@ -133,9 +133,10 @@ function SocialHeader() {
                 </div>
               </section>
               <section className="border-b py-2">
-                {category.map((item, index) => {
+                {category && category.map((item, index) => {
                   return (
-                    <Accordion title={item.name}>
+                    <Link key={index} className=" no-underline " to={`/category/${item._id}/${item.slug}`} onClick={showSidebar}><Accordion title={item.name}>
+                    
                       {item.children.length > 0 ? (
                         <div>
                           {item.children.map((element, index) => {
@@ -153,12 +154,13 @@ function SocialHeader() {
                                 </Link>
                               </div>
                             );
-                          })}
+                          })} 
                         </div>
                       ) : (
                         ""
                       )}
                     </Accordion>
+                    </Link>
                   );
                 })}
               </section>

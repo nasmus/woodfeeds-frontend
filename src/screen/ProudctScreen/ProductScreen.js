@@ -104,7 +104,7 @@ function ProductScreen() {
         <div className="images">
           <img
             className="main_image max-h-96 object-scale-down"
-            src={`/images/${activeImage}`}
+            src={`${process.env.REACT_APP_IMAGE_URL}/images/${activeImage}`}
             alt=""
           />
           <div className="grid_viev_product">
@@ -112,7 +112,8 @@ function ProductScreen() {
               ? imageValue.map((image, index) => {
                   return (
                     <img
-                      src={`/images/${image}`}
+                      key={index}
+                      src={`${process.env.REACT_APP_IMAGE_URL}/images/${image}`}
                       alt=""
                       onClick={() => setActiveImage(image)}
                     />
@@ -143,7 +144,7 @@ function ProductScreen() {
               />
             </li> */}
             <li style={{ listStyleType: "square" }}>
-              Product Hight <b>{product.hight}</b>
+              Product Hight <b>{product.height}</b>
             </li>
             <li style={{ listStyleType: "square" }}>
               Product width <b>{product.width}</b>

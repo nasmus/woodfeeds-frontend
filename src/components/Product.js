@@ -6,6 +6,7 @@ import { Store } from "../Store";
 import '../css/Product.css';
 import Rating from "./Review/Rating";
 
+
 function Product(props) {
   const { product } = props;
 
@@ -34,7 +35,7 @@ function Product(props) {
         <Link to={`/product/${product.slug}`}>
           <img
             className="main-image"
-            src={`/images/${product.image}`}
+            src={`${process.env.REACT_APP_IMAGE_URL}/images/${product.image}`}
             //src={product.image}
             alt={product.name}
           />

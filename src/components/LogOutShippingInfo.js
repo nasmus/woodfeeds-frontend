@@ -253,7 +253,7 @@ export default function LogOutShippingInfo() {
               <div className="flex justify-between items-center items pt-2 ">
                 <div className="flex items-center ">
                   <img
-                    src={`/images/${item.image}`}
+                    src={`${process.env.REACT_APP_IMAGE_URL}/images/${item.image}`}
                     alt="i"
                     className="me-3 w-8 h-9 object-cover"
                   />

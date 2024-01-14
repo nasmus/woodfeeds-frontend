@@ -158,7 +158,7 @@ function PlaceOrderScreen() {
                           <div className="flex items-center lg:w-[90%]">
                             <img
                               style={{ height: "60px" }}
-                              src={`/images/${item.image}`}
+                              src={`${process.env.REACT_APP_IMAGE_URL}/images/${item.image}`}
                               alt={item.name}
                               className="img-fluid rounded img-thumbnail "
                             ></img>{" "}

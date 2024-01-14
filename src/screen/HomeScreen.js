@@ -44,7 +44,7 @@ function HomeScreen(props) {
     fatchData();
   }, []);
 
-  const filteredProducts = products.filter(product => product.countInStock > 0);
+  const filteredProducts = products && products.filter(product => product.countInStock > 0);
   return (
     <div>
       {/* {
@@ -65,7 +65,7 @@ function HomeScreen(props) {
             </div>
             <TopRatedProduct />
             <div className="product-grid">
-              {filteredProducts.map((product) => (
+              {filteredProducts && filteredProducts.map((product) => (
                 <Product product={product}></Product>
               ))}
             </div>

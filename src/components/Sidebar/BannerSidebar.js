@@ -56,26 +56,7 @@ function BannerSidebar() {
         </div>
         <button onClick={previousBanner}>  <ArrowBackIosNewIcon /> </button>
         <button onClick={nextBanner}> <ArrowForwardIosIcon /> </button>
-        {/* <div className="flex gap-3 p-4">
-          <img
-            className="col-span-2 object-cover w-full h-auto rounded-l-xl"
-            src="https://media.e-valy.com/cms/banners/a71ef5d2-45ed-46c5-b2ab-a9071e8efe26"
-            alt="Big"
-          />
-
-          <div className="flex flex-col gap-3">
-            <img
-              className="object-cover w-full h-auto rounded-tr-xl"
-              src="https://media.e-valy.com/cms/banners/a71ef5d2-45ed-46c5-b2ab-a9071e8efe26"
-              alt="Small1"
-            />
-            <img
-              className="object-cover w-full h-auto rounded-br-xl"
-              src="https://media.e-valy.com/cms/banners/a71ef5d2-45ed-46c5-b2ab-a9071e8efe26"
-              alt="Small"
-            />
-          </div>
-        </div> */}
+        
       </div>
       <div className="slider-dots">
         {banners.map((_, index) => (
