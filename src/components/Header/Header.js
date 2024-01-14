@@ -47,14 +47,14 @@ function Header() {
                         title={
                           <button
                             type="button"
-                            class=" hover:text-white hover:bg-cyan-500 focus:outline-none rounded-lg text-md px-2.5 py-2 text-center inline-flex items-center me-2"
+                            className=" hover:text-white hover:bg-cyan-500 focus:outline-none rounded-lg text-md px-2.5 py-2 text-center inline-flex items-center me-2"
                           >
                             <Person className="me-2" />
                             {userInfo.name}
                             <ExpandMore />
                           </button>
                         }
-                        x
+                        
                         id="basic-nav-dropdown"
                       >
                         <LinkContainer to="/profile">
@@ -86,7 +86,7 @@ function Header() {
                       // </Link>
                       <Link
                         to="/signin"
-                        class="text-black hover:bg-cyan-600 hover:!text-white focus:outline-none rounded-lg text-md px-2.5 py-2 text-center inline-flex items-center me-2 no-underline"
+                        className="text-black hover:bg-cyan-600 hover:!text-white focus:outline-none rounded-lg text-md px-2.5 py-2 text-center inline-flex items-center me-2 no-underline"
                       >
                         <Person className="me-2" />
                         <span className="me-2">Login</span>

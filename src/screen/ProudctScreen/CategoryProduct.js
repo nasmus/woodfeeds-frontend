@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import Product from "../../components/Product";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
+import Product from "../../components/Product";
 
 function CategoryProduct() {
   const [productsBookShelf, setProductsBookShelf] = useState([]);
@@ -40,14 +40,14 @@ function CategoryProduct() {
         <h3 className="">Book Shelf</h3>
         <button
           type="button"
-          class="px-3 py-2 text-xs font-medium text-center text-white bg-cyan-500 rounded-lg hover:bg-cyan-700 focus:outline-none "
+          className="px-3 py-2 text-xs font-medium text-center text-white bg-cyan-500 rounded-lg hover:bg-cyan-700 focus:outline-none "
         >
          View More
         </button>
       </div>
       <div className="product-grid">
-        {displayProduct.map((product) => (
-          <Product product={product}></Product>
+        {displayProduct.map((product, index) => (
+          <Product key={index} product={product}></Product>
         ))}
       </div>
 
@@ -72,14 +72,14 @@ function CategoryProduct() {
         <h3 className="">Wall Corner</h3>
         <button
           type="button"
-          class="px-3 py-2 text-xs font-medium text-center text-white bg-cyan-500 rounded-lg hover:bg-cyan-700 focus:outline-none "
+          className="px-3 py-2 text-xs font-medium text-center text-white bg-cyan-500 rounded-lg hover:bg-cyan-700 focus:outline-none "
         >
          View More
         </button>
       </div>
       <div className="product-grid">
-        {displayCornerShelf.map((product) => (
-          <Product product={product}></Product>
+        {displayCornerShelf.map((product ,index) => (
+          <Product key={index} product={product}></Product>
         ))}
       </div>
 
@@ -87,14 +87,14 @@ function CategoryProduct() {
         <h3 className="">Bad Shide shelf</h3>
         <button
           type="button"
-          class="px-3 py-2 text-xs font-medium text-center text-white bg-cyan-500 rounded-lg hover:bg-cyan-700 focus:outline-none "
+          className="px-3 py-2 text-xs font-medium text-center text-white bg-cyan-500 rounded-lg hover:bg-cyan-700 focus:outline-none "
         >
          View More
         </button>
       </div>
       <div className="product-grid">
-        {displayBadSideShelf.map((product) => (
-          <Product product={product}></Product>
+        {displayBadSideShelf.map((product, index) => (
+          <Product key={index} product={product}></Product>
         ))}
       </div>
     </div>

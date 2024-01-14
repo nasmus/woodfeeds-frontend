@@ -4,12 +4,12 @@ import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import { Avatar } from "@mui/material";
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import LinkContainer from "react-router-bootstrap/LinkContainer";
 import { Link } from "react-router-dom";
 import { Store } from "../../Store";
 import "../../css/Navbar.css";
 import Accordion from "../Sidebar/Accordion";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import LinkContainer from "react-router-bootstrap/LinkContainer";
 
 function SocialHeader() {
   const [category, setCategory] = useState([]);
@@ -50,7 +50,7 @@ function SocialHeader() {
                 title={
                   <i className="fi-rr-user"></i>
                 }
-                x
+               
                 id="basic-nav-dropdown"
               >
                 <LinkContainer to="/profile">
@@ -139,7 +139,7 @@ function SocialHeader() {
                     
                       {item.children.length > 0 ? (
                         <div>
-                          {item.children.map((element, index) => {
+                          {item.children && item.children.map((element, index) => {
                             return (
                               <div
                                 key={index}
