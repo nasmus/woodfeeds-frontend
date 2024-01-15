@@ -47,7 +47,7 @@ export default function LogOutShippingInfo() {
       try {
         const { data } = await axios.post("/api/users/signup", {
           name: fullName,
-          email,
+          email : email.toLowerCase(),
           phone: phoneNumber,
           password,
         });

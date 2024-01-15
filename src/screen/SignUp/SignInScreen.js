@@ -20,7 +20,7 @@ function SignInScreen() {
     e.preventDefault();
     try {
       const { data } = await Axios.post("/api/users/signin", {
-        phone,
+        phone : phone.toLowerCase(),
         password,
       });
       ctxDispatch({ type: "USER_SIGNIN", payload: data });
