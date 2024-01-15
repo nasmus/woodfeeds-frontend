@@ -1,4 +1,4 @@
-import React, { useContext, useReducer, useState,useEffect } from 'react';
+import React, { useContext, useEffect, useReducer, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
 import axios from 'axios';
@@ -82,7 +82,7 @@ const reducer = (state, action) => {
               required
             />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="name">
+          <Form.Group className="mb-3" controlId="email">
             <Form.Label>Email</Form.Label>
             <Form.Control
               type="email"
@@ -106,7 +106,7 @@ const reducer = (state, action) => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="password">
+          <Form.Group className="mb-3" controlId="cpassword">
             <Form.Label>Confirm Password</Form.Label>
             <Form.Control
               type="password"

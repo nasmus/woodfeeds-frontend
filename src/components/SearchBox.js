@@ -60,11 +60,11 @@ export default function SearchBox() {
               type="text"
               onFocus={focusHandler}
               onBlur={blurHandler}
-              aria-describedby="button-search"
+              aria-describedby="button-search-header"
               aria-label="search product"
               onChange={(e) => HandleChange(e.target.value)}
             />
-            <button className="submit" id="button-search" type="submit">
+            <button className="submit" id="button-search-btn" type="submit">
               <i className="fi-rr-search"></i>
             </button>
           </form>
@@ -74,7 +74,7 @@ export default function SearchBox() {
             <SearchSuggestList suggestion={suggestion} />
           ) : (
             ""
-          )} 
+          )}
         </div>
       </div>
     </div>

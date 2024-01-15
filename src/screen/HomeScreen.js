@@ -64,8 +64,8 @@ function HomeScreen(props) {
             </div>
             <TopRatedProduct />
             <div className="product-grid">
-              {filteredProducts && filteredProducts.map((product) => (
-                <Product product={product}></Product>
+              {filteredProducts && filteredProducts.map((product, index) => (
+                <Product key={index} product={product}></Product>
               ))}
             </div>
             <CategoryProduct />

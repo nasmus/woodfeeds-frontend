@@ -53,7 +53,7 @@ function SignInScreen() {
               >
                 <div>
                   <label
-                    for="phone"
+                    htmlFor="phone"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Your Email/Phone Number
@@ -70,7 +70,7 @@ function SignInScreen() {
                 </div>
                 <div>
                   <label
-                    for="password"
+                    htmlFor="password"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Password

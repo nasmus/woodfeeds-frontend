@@ -92,10 +92,10 @@ export default function LogInShippingInfo() {
       >
         <div className="lg:w-[40%]">
           <h3>Delivery</h3>
-          <div class="mb-6">
+          <div className="mb-6">
             <label
-              for="default-input"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              htmlFor="default-input"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               Name
             </label>
@@ -105,13 +105,13 @@ export default function LogInShippingInfo() {
               onChange={(e) => setName(e.target.value)}
               type="text"
               id="default-input"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             />
           </div>
-          <div class="mb-6">
+          <div className="mb-6">
             <label
-              for="default-input"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              htmlFor="default-input"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               Phone
             </label>
@@ -121,13 +121,13 @@ export default function LogInShippingInfo() {
               onChange={(e) => handlePhoneNumberChange(e)}
               type="text"
               id="default-input"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             />
           </div>
-          <div class="mb-6">
+          <div className="mb-6">
             <label
-              for="default-input"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              htmlFor="default-input"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               Email
             </label>
@@ -137,14 +137,14 @@ export default function LogInShippingInfo() {
               onChange={(e) => setEmail(e.target.value)}
               type="text"
               id="default-input"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             />
           </div>
           <div className="flex">
-            <div class="mb-6 w-1/2">
+            <div className="mb-6 w-1/2">
               <label
-                for="default-input"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                htmlFor="default-input"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
                 City
               </label>
@@ -155,13 +155,13 @@ export default function LogInShippingInfo() {
                 onChange={(e) => setCity(e.target.value)}
                 type="text"
                 id="default-input"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[95%] p-2.5"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[95%] p-2.5"
               />
             </div>
-            <div class="mb-6 w-1/2">
+            <div className="mb-6 w-1/2">
               <label
-                for="default-input"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                htmlFor="default-input"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
                 District
               </label>
@@ -171,14 +171,14 @@ export default function LogInShippingInfo() {
                 onChange={(e) => setDistric(e.target.value)}
                 type="text"
                 id="default-input"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               />
             </div>
           </div>
-          <div class="mb-6">
+          <div className="mb-6">
             <label
-              for="default-input"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              htmlFor="default-input"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               Address
             </label>
@@ -188,24 +188,24 @@ export default function LogInShippingInfo() {
               onChange={(e) => setAddress(e.target.value)}
               type="text"
               id="default-input"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             />
           </div>
 
           <h4>Payment</h4>
-          <div class="flex items-center  me-4">
+          <div className="flex items-center  me-4">
             <input
               required
-              checked
+              defaultChecked
               id="inline-radio"
               type="radio"
               value=""
               name="inline-radio-group"
-              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500"
+              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500"
             />
             <label
-              for="inline-radio"
-              class="ms-2 pt-3 text-sm font-medium text-gray-900 dark:text-gray-300"
+              htmlFor="inline-radio"
+              className="ms-2 pt-3 text-sm font-medium text-gray-900 dark:text-gray-300"
             >
               Cash on delivery
             </label>
@@ -220,8 +220,8 @@ export default function LogInShippingInfo() {
         <div className="lg:w-[30%]">
           <h3 className="pt-3">Order Summary</h3>
           <div className="lg:pt-20">
-            {cartItems.map((item) => (
-              <div className="flex justify-between items-center items pt-2 ">
+            {cartItems.map((item, index) => (
+              <div key={index} className="flex justify-between items-center items pt-2 ">
                 <div className="flex items-center ">
                   <img
                     src={`${process.env.REACT_APP_IMAGE_URL}/images/${item.image}`}
