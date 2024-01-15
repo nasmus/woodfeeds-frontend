@@ -28,6 +28,7 @@ function HomeScreen(props) {
     error: "",
   });
   //const [products,setProducts] = useState([]); // if we use useState then use it
+  
   useEffect(() => {
     const fatchData = async () => {
       dispatch({ type: "FATCH_REQUEST" });
@@ -44,6 +45,7 @@ function HomeScreen(props) {
   }, []);
 
   const filteredProducts = products && products.filter(product => product.countInStock > 0);
+  const displayproduct = filteredProducts.slice(0, 15);
   return (
     <div>
       {/* {
@@ -62,9 +64,9 @@ function HomeScreen(props) {
                 <BannerSidebar />
               </div>
             </div>
-            <TopRatedProduct />
+            {/* <TopRatedProduct /> */}
             <div className="product-grid">
-              {filteredProducts && filteredProducts.map((product) => (
+              {displayproduct && displayproduct.map((product) => (
                 <Product product={product}></Product>
               ))}
             </div>
