@@ -40,8 +40,8 @@ function CategoryPage() {
             return <Product key={index} product={product}></Product>;
           })
         ) : (
-          <div className="min-h-[50vh]">
-            <h3 className="text-center">No Product found!</h3>
+          <div className="flex justify-center items-center min-h-[50vh]">
+            <h3 className="">No Product found!</h3>
           </div>
         )}
       </div>

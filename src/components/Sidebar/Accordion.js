@@ -4,7 +4,7 @@ import { useState } from 'react';
 export default function Accordion({ title, icon, children }) {
     const [isOpen, setIsOpen] = useState(false);
     return (
-        <div className='px-2' >
+        <div className='px-3 py-1 ' >
             <div className="flex">
                 {/* Accordion header */}
                 <div className={isOpen ? 'text-black' : 'text-slate-400'}>{icon}</div>
