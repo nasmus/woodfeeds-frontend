@@ -47,10 +47,7 @@ function SocialHeader() {
           <div className="ec-header-user dropdown">
             {userInfo ? (
               <NavDropdown
-                title={
-                  <i className="fi-rr-user"></i>
-                }
-               
+                title={<i className="fi-rr-user"></i>}
                 id="basic-nav-dropdown"
               >
                 <LinkContainer to="/profile">
@@ -133,41 +130,48 @@ function SocialHeader() {
                 </div>
               </section>
               <section className="border-b py-2">
-                {category && category.map((item, index) => {
-                  return (
-                    <Link key={index} className=" no-underline " to={`/category/${item._id}/${item.slug}`} onClick={showSidebar}><Accordion title={item.name}>
-                    
-                      {item.children.length > 0 ? (
-                        <div>
-                          {item.children && item.children.map((element, index) => {
-                            return (
-                              <div
-                                key={index}
-                                className=" pl-2 py-0.5 font-sans font-medium text-sm "
-                              >
-                                <Link
-                                  className="no-underline text-slate-600 hover:text-orange-600 "
-                                  onClick={showSidebar}
-                                  to={`/category/${element._id}`}
-                                >
-                                  {element.name}
-                                </Link>
-                              </div>
-                            );
-                          })} 
-                        </div>
-                      ) : (
-                        ""
-                      )}
-                    </Accordion>
-                    </Link>
-                  );
-                })}
+                {category &&
+                  category.map((item, index) => {
+                    return (
+                      <Link
+                        key={index}
+                        className=" no-underline my-2"
+                        to={`/category/${item._id}/${item.slug}`}
+                        onClick={showSidebar}
+                      >
+                        <Accordion title={item.name}>
+                          {item.children.length > 0 ? (
+                            <div className="">
+                              {item.children &&
+                                item.children.map((element, index) => {
+                                  return (
+                                    <div
+                                      key={index}
+                                      className=" pl-2 py-0.5 font-sans font-medium text-sm "
+                                    >
+                                      <Link
+                                        className="no-underline text-slate-600 hover:text-orange-600 "
+                                        onClick={showSidebar}
+                                        to={`/category/${element._id}`}
+                                      >
+                                        {element.name}
+                                      </Link>
+                                    </div>
+                                  );
+                                })}
+                            </div>
+                          ) : (
+                            ""
+                          )}
+                        </Accordion>
+                      </Link>
+                    );
+                  })}
               </section>
             </div>
-            <div className=" pb-3 pl-2 ">
+            <div className="pb-10 pl-4 ">
               {userInfo ? (
-                <section className=" bottom-0 text-slate-400">
+                <section className="bottom-8 text-slate-400">
                   <div className="flex ">
                     <Settings
                       fontSize="small"

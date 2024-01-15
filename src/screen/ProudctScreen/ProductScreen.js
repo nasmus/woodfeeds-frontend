@@ -182,8 +182,8 @@ function ProductScreen() {
       <div className="product_suggest">
         <h2>Product Related To This Item</h2>
         <div className="product-grid2">
-          {randomProducts.map((product) => {
-            return <Product product={product}></Product>;
+          {randomProducts.map((product, index) => {
+            return <Product key={index} product={product}></Product>;
           })}
         </div>
       </div>
