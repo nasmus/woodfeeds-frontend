@@ -126,7 +126,7 @@ function ProductScreen() {
               : ""}
           </div>
         </div>
-        <div className="product_content pt-4">
+        <div className="product_content p-4">
           <h1>{product.name}</h1>
           <p>
             <Rating rating={product.rating} numReviews={product.numReviews} />
@@ -137,8 +137,8 @@ function ProductScreen() {
           </p>
           <h5>
             {" "}
-                {/* <i class="fa-solid fa-bangladeshi-taka-sign"></i> */}
-                ৳{product.price}
+            {/* <i class="fa-solid fa-bangladeshi-taka-sign"></i> */}৳
+            {product.price}
           </h5>
           <h4>Product Features</h4>
           <ul>
@@ -148,19 +148,19 @@ function ProductScreen() {
               />
             </li> */}
             <li style={{ listStyleType: "square" }}>
-              Product Hight <b>{product.height}</b>
+              Product Height: <b>{product.height} inch</b>
             </li>
             <li style={{ listStyleType: "square" }}>
-              Product width <b>{product.width}</b>
+              Product Width: <b>{product.width} inch</b>
             </li>
             <li style={{ listStyleType: "square" }}>
-              Thickness <b>{product.thickness}</b>
+              Thickness: <b>{product.thickness} inch</b>
             </li>
             <li style={{ listStyleType: "square" }}>
-              Product Color <b>{product.color}</b>
+              Product Color: <b>{product.color} </b>
             </li>
             <li style={{ listStyleType: "square" }}>
-              Product Materials <b>{product.productMaterials}</b>
+              Product Materials: <b>{product.productMaterials}</b>
             </li>
           </ul>
           <div className="button">
@@ -181,13 +181,15 @@ function ProductScreen() {
       </div>
       <div className="product_description mx-8 lg:my-2 my-4">
         <h3>Description</h3>
-        <p><div dangerouslySetInnerHTML={{ __html: product.description }} /></p>
+        <p>
+          <div dangerouslySetInnerHTML={{ __html: product.description }} />
+        </p>
       </div>
       <div className="product_suggest">
         <h2>Product Related To This Item</h2>
         <div className="product-grid2">
-          {randomProducts.map((product) => {
-            return <Product product={product}></Product>;
+          {randomProducts.map((product, index) => {
+            return <Product key={index} product={product}></Product>;
           })}
         </div>
       </div>

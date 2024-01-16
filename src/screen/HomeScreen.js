@@ -6,7 +6,6 @@ import Product from "../components/Product";
 import BannerSidebar from "../components/Sidebar/BannerSidebar";
 import "../css/Product.css";
 import CategoryProduct from "./ProudctScreen/CategoryProduct";
-import TopRatedProduct from "./ProudctScreen/TopRatedProduct";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -66,8 +65,8 @@ function HomeScreen(props) {
             </div>
             {/* <TopRatedProduct /> */}
             <div className="product-grid">
-              {displayproduct && displayproduct.map((product) => (
-                <Product product={product}></Product>
+              {filteredProducts && filteredProducts.map((product, index) => (
+                <Product key={index} product={product}></Product>
               ))}
             </div>
             <CategoryProduct />

@@ -33,7 +33,7 @@ function SignUpScreen() {
       try {
         const { data } = await Axios.post("/api/users/signup", {
           name,
-          email,
+          email : email.toLowerCase(),
           phone,
           password,
         });
