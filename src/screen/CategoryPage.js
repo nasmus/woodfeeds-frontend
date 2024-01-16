@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Product from "../components/Product";
+import { Helmet } from "react-helmet-async";
 
 function CategoryPage() {
   const [categoryValue, setCategoryValue] = useState([]);
@@ -34,6 +35,9 @@ function CategoryPage() {
 
   return (
     <div>
+      <Helmet>
+        <title>Category</title>
+      </Helmet>
       <div className="product-grid2">
         {currentProducts.length > 0 ? (
           currentProducts.map((product, index) => {

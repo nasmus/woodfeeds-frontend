@@ -12,6 +12,7 @@ import Product from "../components/Product";
 import Rating from "../components/Review/Rating";
 import "../css/Product.css";
 import { getError } from "../utils";
+import { Helmet } from "react-helmet-async";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -32,23 +33,23 @@ const reducer = (state, action) => {
       return state;
   }
 };
-
+ 
 const prices = [
   {
-    name: "$1 to $100",
-    value: "1-100",
+    name: "৳500 to ৳1000",
+    value: "500-1000",
   },
   {
-    name: "$101 to $500",
-    value: "101-500",
+    name: "৳1001 to ৳1500",
+    value: "1001-1500",
   },
   {
-    name: "$501 to $999",
-    value: "501-999",
+    name: "৳1501 to ৳200",
+    value: "1501-1999",
   },
   {
-    name: "$1000 to $2000",
-    value: "1000-2000",
+    name: "৳2001 to ৳3000",
+    value: "2000-3000",
   },
 ];
 
@@ -129,6 +130,9 @@ export default function SearchScreen() {
   };
   return (
     <div className="m-2">
+      <Helmet>
+        <title>Product Search</title>
+      </Helmet>
       <>
         <Row>
           <Col md={3}>

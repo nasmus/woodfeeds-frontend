@@ -243,7 +243,7 @@ export default function LogOutShippingInfo() {
             type="submit"
             className="w-full hidden lg:block text-white bg-cyan-500 hover:bg-cyan-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3 text-center"
           >
-            Complete Order
+            Continue To Shipping
           </button>
         </div>
         <div className="lg:w-[30%]">
@@ -286,7 +286,7 @@ export default function LogOutShippingInfo() {
               type="submit"
               className="w-full lg:hidden text-white bg-cyan-500 hover:bg-cyan-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3 text-center"
             >
-              Complete Order
+              Continue To Shipping
             </button>
           </div>
         </div>

@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Store } from "../../Store";
+import { Helmet } from "react-helmet-async";
 //import { getError } from "../../utils";
 
 function SignUpScreen() {
@@ -68,6 +69,9 @@ function SignUpScreen() {
   
   return (
     <div>
+      <Helmet>
+        <title>Registration</title>
+      </Helmet>
       <section className=" m-auto ">
         <div
           className="px-4  py-5 px-md-5 text-center text-lg-start"

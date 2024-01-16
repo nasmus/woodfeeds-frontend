@@ -7,12 +7,8 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 function BannerSidebar() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const banners = [
-    "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/2dc3aafcc8afbaf8.jpg?q=20",
-    "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/dd7f425c6a2fa49a.jpg?q=20",
-    "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/61a578e7258cbaa5.jpeg?q=20",
-    "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/99fae2c9891a1c0c.jpeg?q=20",
-    "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/7fd0e4ab26429926.jpg?q=20",
-
+    "woodfeeds_banner.png",
+    "woodfeeds_banar.png",
     // Add your banner image URLs here
   ];
 
