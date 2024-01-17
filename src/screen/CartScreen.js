@@ -11,6 +11,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Store } from "../Store";
 import MessageBox from "../components/MessageBox";
 import "../css/CartScreen.css";
+import { Helmet } from "react-helmet-async";
 
 function CartScreen() {
   const navigate = useNavigate();
@@ -38,6 +39,9 @@ function CartScreen() {
 
   return (
     <div>
+      <Helmet>
+        <title>Add To Cart</title>
+      </Helmet>
       <Container>
         <h1 className="mainScreen">Shoping Cart</h1>
         <Row>

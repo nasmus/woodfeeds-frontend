@@ -37,6 +37,7 @@ function CategoryProduct() {
 
   return (
     <div className=" mt-2 mb-2 ">
+      
       <div className="flex my-3 justify-between items-center px-3 py-2 bg-slate-100 mx-1 rounded-md">
         <h3 className="">Book Shelf</h3>
         <Link to="https://woodfeeds.com/category/65a2710c006dc1d348d149c6/Book%20Shelf">
@@ -58,14 +59,14 @@ function CategoryProduct() {
         <div>
           <img
             className="object-cover w-full h-auto rounded-tl-xl rounded-bl-xl"
-            src="https://media.e-valy.com/cms/banners/a71ef5d2-45ed-46c5-b2ab-a9071e8efe26"
+            src="/thamnel.png"
             alt="Small1"
           />
         </div>
         <div>
           <img
             className="object-cover w-full h-auto rounded-br-xl rounded-tr-xl"
-            src="https://media.e-valy.com/cms/banners/a71ef5d2-45ed-46c5-b2ab-a9071e8efe26"
+            src="/thamnel.png"
             alt="Small"
           />
         </div>

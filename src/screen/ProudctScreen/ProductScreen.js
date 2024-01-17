@@ -12,6 +12,7 @@ import RatingSubmit from "../../components/Review/RatingSubmit";
 import Review from "../../components/Review/Review";
 import "../../css/ProductScreen.css";
 import { getError } from "../../utils";
+import { Helmet } from "react-helmet-async";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -100,6 +101,9 @@ function ProductScreen() {
     <MessageBox>{error}</MessageBox>
   ) : (
     <div>
+      <Helmet>
+        <title>{product.name}</title>
+      </Helmet>
       <div className="product_section">
         <div className="images">
           <img

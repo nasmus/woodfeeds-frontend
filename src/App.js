@@ -28,6 +28,7 @@ import ResetPassword from "./screen/SignUp/ResetPassword";
 import SendEmail from "./screen/SignUp/SendEmail";
 import SignInScreen from "./screen/SignUp/SignInScreen";
 import SignUpScreen from "./screen/SignUp/SignUpScreen";
+import { Helmet } from "react-helmet-async";
 
 
 function App() {
@@ -42,6 +43,9 @@ function App() {
 
   return (
     <BrowserRouter>
+    <Helmet>
+        <title>Woodfeeds</title>
+      </Helmet>
       <div className="d-flex flex-column main_section">
         <ToastContainer position="bottom-center" limit={1} />
         <header>
