@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 import { Store } from "../../Store";
 import LoadingBox from "../../components/LoadingBox";
 import { getError } from "../../utils";
+import { Helmet } from "react-helmet-async";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -58,7 +59,7 @@ function PlaceOrderScreen() {
 
       await Axios.post(
         "/api/count_in_stock/order",
-        {cartItemsData},
+        { cartItemsData },
         {
           headers: {
             authorization: `Bearer ${userInfo.token}`,
@@ -84,8 +85,6 @@ function PlaceOrderScreen() {
         }
       );
 
-      
-
       ctxDispatch({ type: "CART_CLEAR" });
       dispatch({ type: "CREATE_SUCCESS" });
       localStorage.removeItem("cartItems");
@@ -100,17 +99,19 @@ function PlaceOrderScreen() {
       navigate("/payment");
     }
   }, [cart, navigate]);
-  
+
   useEffect(() => {
-    if(!userInfo){
-      navigate('/')
+    if (!userInfo) {
+      navigate("/");
     }
-  },[userInfo,navigate])
+  }, [userInfo, navigate]);
 
   return (
     <div className="">
       {/* <CheckOut step1 step2 step3 step4 ></CheckOut> */}
-
+      <Helmet>
+        <title>Place Order</title>
+      </Helmet>
       <Container>
         <h1 className="my-3">Place Order</h1>
         <Row>
@@ -151,34 +152,35 @@ function PlaceOrderScreen() {
               <Card.Body>
                 <Card.Title>Items</Card.Title>
                 <ListGroup variant="flush">
-                  {cart.cartItems && cart.cartItems.map((item) => (
-                    <ListGroup.Item key={item._id}>
-                      <Row className="align-items-center ">
-                        <Col xs={6} md={6}>
-                          <div className="flex items-center lg:w-[90%]">
-                            <img
-                              style={{ height: "60px" }}
-                              src={`${process.env.REACT_APP_IMAGE_URL}/images/${item.image}`}
-                              alt={item.name}
-                              className="img-fluid rounded img-thumbnail "
-                            ></img>{" "}
-                            <Link
-                              className="no-underline pl-1"
-                              to={`/product/${item.slug}`}
-                            >
-                              {item.name.slice(0, 35)}...
-                            </Link>
-                          </div>
-                        </Col>
-                        <Col xs={3} md={3}>
-                          <span>{item.quantity}</span>
-                        </Col>
-                        <Col xs={3} md={3}>
-                          ৳{item.price}
-                        </Col>
-                      </Row>
-                    </ListGroup.Item>
-                  ))}
+                  {cart.cartItems &&
+                    cart.cartItems.map((item) => (
+                      <ListGroup.Item key={item._id}>
+                        <Row className="align-items-center ">
+                          <Col xs={6} md={6}>
+                            <div className="flex items-center lg:w-[90%]">
+                              <img
+                                style={{ height: "60px" }}
+                                src={`${process.env.REACT_APP_IMAGE_URL}/images/${item.image}`}
+                                alt={item.name}
+                                className="img-fluid rounded img-thumbnail "
+                              ></img>{" "}
+                              <Link
+                                className="no-underline pl-1"
+                                to={`/product/${item.slug}`}
+                              >
+                                {item.name.slice(0, 35)}...
+                              </Link>
+                            </div>
+                          </Col>
+                          <Col xs={3} md={3}>
+                            <span>{item.quantity}</span>
+                          </Col>
+                          <Col xs={3} md={3}>
+                            ৳{item.price}
+                          </Col>
+                        </Row>
+                      </ListGroup.Item>
+                    ))}
                 </ListGroup>
                 <Link
                   className="no-underline px-2 py-1.5 text-xs font-medium text-center text-white bg-cyan-500 rounded-lg hover:bg-cyan-600 focus:ring-4 focus:outline-none focus:ring-blue-300"
