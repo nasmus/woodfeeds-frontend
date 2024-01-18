@@ -5,6 +5,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 import { StoreProvider } from "./Store.js";
 import { HelmetProvider } from "react-helmet-async";
+import ReactPixel from 'react-facebook-pixel'
+
+ReactPixel.init('399062382518932')
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

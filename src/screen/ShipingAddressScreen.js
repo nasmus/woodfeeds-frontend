@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Store } from "../Store";
 import "../css/ShippingAddress.css";
+import ReactPixel from 'react-facebook-pixel';
+
 function ShipingAddressScreen() {
   const navigate = useNavigate();
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -26,6 +28,7 @@ function ShipingAddressScreen() {
       navigate("/signin?redirect=/shipping");
     }
   }, [userInfo, navigate]);
+
   
 
   const submitHandler = (e) => {
@@ -74,6 +77,10 @@ function ShipingAddressScreen() {
         setPhoneNumber(cleanedPhoneNumber);
 
   }
+  
+  useEffect(() =>{
+    ReactPixel.track('shipping_Address', { name: `${fullName}`, product_id:`${phoneNumber}`, city:`${city}`, distric:`${distric}`,address:`${address}` })
+  },[address,city,distric,fullName,phoneNumber])
   
 
   return (

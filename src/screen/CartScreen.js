@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/esm/Button";
 import Col from "react-bootstrap/esm/Col";
@@ -12,6 +12,7 @@ import { Store } from "../Store";
 import MessageBox from "../components/MessageBox";
 import "../css/CartScreen.css";
 import { Helmet } from "react-helmet-async";
+import ReactPixel from 'react-facebook-pixel'
 
 function CartScreen() {
   const navigate = useNavigate();
@@ -36,6 +37,13 @@ function CartScreen() {
   const checkOutHandler = () => {
     navigate("/shipping/?redirect=/placeorder");
   };
+
+  useEffect(() => {
+    cartItems && cartItems.map((item) => {
+      ReactPixel.track('add_to_cart', { productName: `${item.name}`, item: `${item.price}`})
+    })
+    
+  },[cartItems])
 
   return (
     <div>
