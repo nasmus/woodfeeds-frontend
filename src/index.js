@@ -7,7 +7,7 @@ import { StoreProvider } from "./Store.js";
 import { HelmetProvider } from "react-helmet-async";
 import ReactPixel from 'react-facebook-pixel'
 
-ReactPixel.init('399062382518932')
+ReactPixel.init('898596378511586')
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
