@@ -110,7 +110,7 @@ function PlaceOrderScreen() {
   }, [userInfo, navigate]);
 
   useEffect(() => {
-    ReactPixel.track('shipping_Address', { orderItem: `${[cart.cartItems]}`, shippingAddress:`${[cart.shippingAddress]}`, paymentMethod:`${cart.paymentMethod}`, itemsPrice:`${cart.itemsPrice}`,shippingPrice:`${cart.shippingPrice}`,totalPrice: `${cart.totalPrice}` })
+    ReactPixel.track('Purchase', { orderItem: `${[cart.cartItems]}`, shippingAddress:`${[cart.shippingAddress]}`, paymentMethod:`${cart.paymentMethod}`, itemsPrice:`${cart.itemsPrice}`,shippingPrice:`${cart.shippingPrice}`,totalPrice: `${cart.totalPrice}` })
   },[cart.cartItems,cart.shippingAddress,cart.paymentMethod,cart.itemsPrice,cart.shippingPrice,cart.totalPrice])
 
   return (
