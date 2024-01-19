@@ -11,6 +11,7 @@ import { Store } from "../../Store";
 import LoadingBox from "../../components/LoadingBox";
 import { getError } from "../../utils";
 import { Helmet } from "react-helmet-async";
+import ReactPixel from 'react-facebook-pixel'
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -49,8 +50,9 @@ function PlaceOrderScreen() {
   cart.itemsPrice = round2(
     cart.cartItems.reduce((a, c) => a + c.quantity * c.price, 0)
   );
-  cart.shippingPrice = cart.itemsPrice > 100 ? round2(0) : round2(10);
-  cart.taxPrice = round2(0.15 * cart.itemsPrice);
+  cart.shippingPrice = cart.itemsPrice > 1000 ? round2(200) : round2(100);
+  //cart.taxPrice = round2(0.15 * cart.itemsPrice);
+  cart.taxPrice = 0;
   cart.totalPrice = cart.itemsPrice + cart.shippingPrice + cart.taxPrice;
 
   const placeOrderHandler = async () => {
@@ -84,7 +86,8 @@ function PlaceOrderScreen() {
           },
         }
       );
-
+      
+      ReactPixel.track('shipping_Address', { orderItem: `${cart.cartItems}`, shippingAddress:`${cart.shippingAddress}`, paymentMethod:`${cart.paymentMethod}`, itemsPrice:`${cart.itemsPrice}`,shippingPrice:`${cart.shippingPrice}`,totalPrice: `${cart.totalPrice}` })
       ctxDispatch({ type: "CART_CLEAR" });
       dispatch({ type: "CREATE_SUCCESS" });
       localStorage.removeItem("cartItems");
@@ -105,6 +108,10 @@ function PlaceOrderScreen() {
       navigate("/");
     }
   }, [userInfo, navigate]);
+
+  useEffect(() => {
+    ReactPixel.track('Purchase', { orderItem: `${[cart.cartItems]}`, shippingAddress:`${[cart.shippingAddress]}`, paymentMethod:`${cart.paymentMethod}`, itemsPrice:`${cart.itemsPrice}`,shippingPrice:`${cart.shippingPrice}`,totalPrice: `${cart.totalPrice}` })
+  },[cart.cartItems,cart.shippingAddress,cart.paymentMethod,cart.itemsPrice,cart.shippingPrice,cart.totalPrice])
 
   return (
     <div className="">
@@ -232,7 +239,7 @@ function PlaceOrderScreen() {
                         disabled={cart.cartItems.length === 0}
                         className="px-4 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg"
                       >
-                        Place Order
+                        Purchase
                       </button>
                     </div>
                     {loading && <LoadingBox></LoadingBox>}

@@ -13,6 +13,7 @@ import Review from "../../components/Review/Review";
 import "../../css/ProductScreen.css";
 import { getError } from "../../utils";
 import { Helmet } from "react-helmet-async";
+import ReactPixel from 'react-facebook-pixel';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -75,6 +76,7 @@ function ProductScreen() {
     const existItem = cart.cartItems.find((x) => x._id === product._id);
     const quantity = existItem ? existItem.quantity + 1 : 1;
     const { data } = await axios.get(`/api/products/${product._id}`);
+    
     if (data.countInStock < quantity) {
       toast.error("Sorry, Product is out of stock");
       return;
@@ -94,6 +96,11 @@ function ProductScreen() {
       setImageValue(product.multipleImage);
     }
   }, [product.multipleImage]);
+
+  //facebook pixel setup
+  useEffect(() => {
+    ReactPixel.track('ViewContent', { name: `${product.name}`, product_id:`${product._id}`, product_price:`${product.price}` })
+  },[product.name,product._id,product.price])
 
   return loading ? (
     <LoadingBox />
@@ -161,6 +168,9 @@ function ProductScreen() {
             </li>
             <li style={{ listStyleType: "square" }}>
               Product Materials: <b>{product.productMaterials}</b>
+            </li>
+            <li style={{ listStyleType: "square" }}>
+              120 shipping charge applicable form every product
             </li>
           </ul>
           <div className="button">
