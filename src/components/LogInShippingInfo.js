@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Store } from "../Store";
+import ReactPixel from 'react-facebook-pixel'
 
 export default function LogInShippingInfo() {
   const navigate = useNavigate();
@@ -32,6 +33,10 @@ export default function LogInShippingInfo() {
     const cleanedPhoneNumber = e.target.value.replace(/\s/g, "");
     setPhoneNumber(cleanedPhoneNumber);
   };
+
+  const facebookPixel =()=>{
+    ReactPixel.track('continue_shopping', { userName: `${fullName}`, email: `${email},`,phone:`${phoneNumber}`,city:`${city}`,distric:`${distric}`,address:`${address}`})
+  }
 
   var cartItem = JSON.parse(localStorage.getItem("cartItems"));
 
@@ -254,6 +259,7 @@ export default function LogInShippingInfo() {
               </div>
             </div>
             <button
+            onClick={facebookPixel()}
               type="submit"
               className="w-full lg:hidden text-white bg-cyan-500 hover:bg-cyan-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3 text-center"
             >

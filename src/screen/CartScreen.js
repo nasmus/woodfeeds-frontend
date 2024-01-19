@@ -34,16 +34,15 @@ function CartScreen() {
   const removeItemHandeler = (item) => {
     ctxDispatch({ type: "CART_REMOVE_ITEM", payload: item });
   };
+  const facebookPixel =()=> {
+    cartItems && cartItems.map((item) => {
+    ReactPixel.track('chackout', { productName: `${item.name}`, item: `${item.price},`,quentity:`${item.quantity}`})
+  })
+}
   const checkOutHandler = () => {
+    facebookPixel()
     navigate("/shipping/?redirect=/placeorder");
   };
-
-  useEffect(() => {
-    cartItems && cartItems.map((item) => {
-      ReactPixel.track('add_to_cart', { productName: `${item.name}`, item: `${item.price}`})
-    })
-    
-  },[cartItems])
 
   return (
     <div>

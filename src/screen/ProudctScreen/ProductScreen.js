@@ -72,10 +72,15 @@ function ProductScreen() {
   const { cart } = state;
   const userinfo = localStorage.getItem("userInfo");
 
+  const facebookPixel =()=> {
+    ReactPixel.track('add_to_cart', { productName: `${product.name}`, item: `${product.price}`, quentity: `${product.quentity}`})
+  }
+
   const addToCartHandler = async () => {
     const existItem = cart.cartItems.find((x) => x._id === product._id);
     const quantity = existItem ? existItem.quantity + 1 : 1;
     const { data } = await axios.get(`/api/products/${product._id}`);
+    facebookPixel()
     
     if (data.countInStock < quantity) {
       toast.error("Sorry, Product is out of stock");
@@ -97,10 +102,12 @@ function ProductScreen() {
     }
   }, [product.multipleImage]);
 
+  
+
   //facebook pixel setup
-  useEffect(() => {
-    ReactPixel.track('ViewContent', { name: `${product.name}`, product_id:`${product._id}`, product_price:`${product.price}` })
-  },[product.name,product._id,product.price])
+  // useEffect(() => {
+  //   ReactPixel.track('ViewContent', { name: `${product.name}`, product_id:`${product._id}`, product_price:`${product.price}` })
+  // },[product.name,product._id,product.price])
 
   return loading ? (
     <LoadingBox />
@@ -170,7 +177,7 @@ function ProductScreen() {
               Product Materials: <b>{product.productMaterials}</b>
             </li>
             <li style={{ listStyleType: "square" }}>
-              120 shipping charge applicable form every product
+              200 shipping charge applicable form every product
             </li>
           </ul>
           <div className="button">
