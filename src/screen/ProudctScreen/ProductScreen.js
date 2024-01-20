@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useContext, useEffect, useReducer, useState } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
+import ReactPixel from 'react-facebook-pixel';
+import { Helmet } from "react-helmet-async";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Store } from "../../Store";
@@ -12,8 +14,6 @@ import RatingSubmit from "../../components/Review/RatingSubmit";
 import Review from "../../components/Review/Review";
 import "../../css/ProductScreen.css";
 import { getError } from "../../utils";
-import { Helmet } from "react-helmet-async";
-import ReactPixel from 'react-facebook-pixel';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -120,11 +120,14 @@ function ProductScreen() {
       </Helmet>
       <div className="product_section">
         <div className="images">
-          <img
-            className="main_image max-h-96 object-scale-down"
-            src={`${process.env.REACT_APP_IMAGE_URL}/images/${activeImage}`}
-            alt=""
-          />
+          <div className="flex items-center justify-center"> 
+          
+            <img
+              className="main_image max-h-96 object-scale-down"
+              src={`${process.env.REACT_APP_IMAGE_URL}/images/${activeImage}`}
+              alt=""
+            />
+          </div>
           <div className="grid_viev_product">
             {imageValue.length > 0
               ? imageValue.map((image, index) => {
