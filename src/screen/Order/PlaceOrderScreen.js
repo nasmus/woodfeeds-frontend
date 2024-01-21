@@ -55,7 +55,7 @@ function PlaceOrderScreen() {
   cart.taxPrice = 0;
   cart.totalPrice = cart.itemsPrice + cart.shippingPrice + cart.taxPrice;
   const facebookPixel=()=>{
-    ReactPixel.track('Purchase', { orderItem: `${[cart.cartItems]}`, shippingAddress:`${[cart.shippingAddress]}`, paymentMethod:`${cart.paymentMethod}`, itemsPrice:`${cart.itemsPrice}`,shippingPrice:`${cart.shippingPrice}`,totalPrice: `${cart.totalPrice}` })
+    ReactPixel.track('Purchase', { orderItem: `${[cart.cartItems.name]}`, paymentMethod:`${cart.paymentMethod}`, itemsPrice:`${cart.itemsPrice}`,shippingPrice:`${cart.shippingPrice}`,totalPrice: `${cart.totalPrice}` })
   }
 
   
