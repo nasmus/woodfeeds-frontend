@@ -11,7 +11,7 @@ export default function SearchSuggestList({ suggestion }) {
           >
             <div className="flex items-center p-4 w-[300px] max-w-[300px] lg:w-[500px] lg:max-w-[500px] hover:bg-slate-200 transition-colors">
               <img
-                src={`/images/${suggest.image}`}
+                src={`${process.env.REACT_APP_IMAGE_URL}/images/${suggest.image}`}
                 alt="img"
                 className="me-3 w-10 object-scale-down"
               />
