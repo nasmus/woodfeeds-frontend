@@ -7,8 +7,8 @@ import "../../css/Slider.css";
 function BannerSidebar() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const banners = [
-    "woodfeeds_banner.png",
-    "woodfeeds_banar.png",
+    "banner2.jpg",
+    
     // Add your banner image URLs here
   ];
 
@@ -77,14 +77,14 @@ function BannerSidebar() {
           </div>
         </div>
       </div>
-      <div className="lg:w-1/3 flex flex-col mt-[10px] ">
+      <div className="hidden lg:w-1/3 lg:flex flex-col mt-[10px] ">
         <img
-          src="/woodfeeds_banar.png"
+          src="/banner.jpg"
           className="w-full h-[169px] mb-[10px]  rounded-xl"
           alt="banner-pic"
         />
         <img
-          src="woodfeeds_banner.png"
+          src="banner3.jpg"
           className="w-full h-[169px]  rounded-xl"
           alt="banner-pic"
         />
