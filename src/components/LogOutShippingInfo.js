@@ -39,7 +39,8 @@ export default function LogOutShippingInfo() {
 
   var cartItem = JSON.parse(localStorage.getItem("cartItems"));
 
-  const facebookPixel =()=>{
+  
+  const facebookPixel_ =()=>{
     ReactPixel.track('continue_shopping', { userName: `${fullName}`, email: `${email},`,phone:`${phoneNumber}`,city:`${city}`,distric:`${distric}`,address:`${address}`})
   }
 
@@ -244,7 +245,7 @@ export default function LogOutShippingInfo() {
           </div>
           <button
             type="submit"
-            onClick={facebookPixel()}
+            onClick={facebookPixel_()}
             className="w-full hidden lg:block text-white bg-cyan-500 hover:bg-cyan-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3 text-center"
           >
             Continue To Shipping
@@ -288,7 +289,7 @@ export default function LogOutShippingInfo() {
             </div>
             <button
               type="submit"
-              onClick={facebookPixel()}
+              onClick={facebookPixel_()}
               className="w-full lg:hidden text-white bg-cyan-500 hover:bg-cyan-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3 text-center"
             >
               Continue To Shipping
