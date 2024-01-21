@@ -34,10 +34,6 @@ export default function LogInShippingInfo() {
     setPhoneNumber(cleanedPhoneNumber);
   };
 
-  
-  const facebookPixel_ =()=>{
-    ReactPixel.track('continue_shopping', { userName: `${fullName}`, email: `${email},`,phone:`${phoneNumber}`,city:`${city}`,distric:`${distric}`,address:`${address}`})
-  }
 
   var cartItem = JSON.parse(localStorage.getItem("cartItems"));
 
@@ -218,7 +214,6 @@ export default function LogInShippingInfo() {
           </div>
           <button
             type="submit"
-            onClick={facebookPixel_()}
             className="w-full hidden lg:block text-white bg-cyan-500 hover:bg-cyan-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3 text-center"
           >
             Continue To Shipping
@@ -261,7 +256,6 @@ export default function LogInShippingInfo() {
               </div>
             </div>
             <button
-              onClick={facebookPixel_()}
               type="submit"
               className="w-full lg:hidden text-white bg-cyan-500 hover:bg-cyan-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3 text-center"
             >
