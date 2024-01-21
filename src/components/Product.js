@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { Store } from "../Store";
 import '../css/Product.css';
 import Rating from "./Review/Rating";
+import ReactPixel from 'react-facebook-pixel';
 
 
 function Product(props) {
@@ -28,6 +29,10 @@ function Product(props) {
     });
   };
 
+  const facebookPixel =()=> {
+    ReactPixel.track('ViewContent', { name: `${product.name}`, product_id:`${product._id}`, product_price:`${product.price}` })
+  }
+
   return (
     <>
       <div className="product-card">
@@ -39,7 +44,7 @@ function Product(props) {
             alt={product.name}
           />
         </Link>
-        <Link className="product-card_link" to={`/product/${product.slug}`}>
+        <Link className="product-card_link" to={`/product/${product.slug}`} onClick={facebookPixel} >
           <p>{product.name}</p>
         </Link>
         <span>

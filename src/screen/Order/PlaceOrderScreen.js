@@ -54,8 +54,14 @@ function PlaceOrderScreen() {
   //cart.taxPrice = round2(0.15 * cart.itemsPrice);
   cart.taxPrice = 0;
   cart.totalPrice = cart.itemsPrice + cart.shippingPrice + cart.taxPrice;
+  const facebookPixel=()=>{
+    ReactPixel.track('Purchase', { orderItem: `${[cart.cartItems.name]}`, paymentMethod:`${cart.paymentMethod}`, itemsPrice:`${cart.itemsPrice}`,shippingPrice:`${cart.shippingPrice}`,totalPrice: `${cart.totalPrice}` })
+  }
+
+  
 
   const placeOrderHandler = async () => {
+    
     try {
       dispatch({ type: "CREATE_REQUEST" });
 
@@ -86,8 +92,8 @@ function PlaceOrderScreen() {
           },
         }
       );
+      facebookPixel()
       
-      ReactPixel.track('shipping_Address', { orderItem: `${cart.cartItems}`, shippingAddress:`${cart.shippingAddress}`, paymentMethod:`${cart.paymentMethod}`, itemsPrice:`${cart.itemsPrice}`,shippingPrice:`${cart.shippingPrice}`,totalPrice: `${cart.totalPrice}` })
       ctxDispatch({ type: "CART_CLEAR" });
       dispatch({ type: "CREATE_SUCCESS" });
       localStorage.removeItem("cartItems");
@@ -109,9 +115,7 @@ function PlaceOrderScreen() {
     }
   }, [userInfo, navigate]);
 
-  useEffect(() => {
-    ReactPixel.track('Purchase', { orderItem: `${[cart.cartItems]}`, shippingAddress:`${[cart.shippingAddress]}`, paymentMethod:`${cart.paymentMethod}`, itemsPrice:`${cart.itemsPrice}`,shippingPrice:`${cart.shippingPrice}`,totalPrice: `${cart.totalPrice}` })
-  },[cart.cartItems,cart.shippingAddress,cart.paymentMethod,cart.itemsPrice,cart.shippingPrice,cart.totalPrice])
+  
 
   return (
     <div className="">

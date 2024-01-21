@@ -59,14 +59,14 @@ function CategoryProduct() {
         <div>
           <img
             className="object-cover w-full h-auto rounded-tl-xl rounded-bl-xl"
-            src="/thamnel.png"
+            src="/banner.jpg"
             alt="Small1"
           />
         </div>
         <div>
           <img
             className="object-cover w-full h-auto rounded-br-xl rounded-tr-xl"
-            src="/thamnel.png"
+            src="/banner1.jpg"
             alt="Small"
           />
         </div>

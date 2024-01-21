@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
 import { Store } from "../Store";
 import { getError } from "../utils";
+import ReactPixel from 'react-facebook-pixel'
 
 export default function LogOutShippingInfo() {
  
@@ -38,7 +39,9 @@ export default function LogOutShippingInfo() {
 
   var cartItem = JSON.parse(localStorage.getItem("cartItems"));
 
-
+  const facebookPixel =()=>{
+    ReactPixel.track('continue_shopping', { userName: `${fullName}`, email: `${email},`,phone:`${phoneNumber}`,city:`${city}`,distric:`${distric}`,address:`${address}`})
+  }
 
   const submitHendler = async (e) => {
     e.preventDefault();
@@ -241,6 +244,7 @@ export default function LogOutShippingInfo() {
           </div>
           <button
             type="submit"
+            onClick={facebookPixel()}
             className="w-full hidden lg:block text-white bg-cyan-500 hover:bg-cyan-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3 text-center"
           >
             Continue To Shipping
@@ -284,6 +288,7 @@ export default function LogOutShippingInfo() {
             </div>
             <button
               type="submit"
+              onClick={facebookPixel()}
               className="w-full lg:hidden text-white bg-cyan-500 hover:bg-cyan-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3 text-center"
             >
               Continue To Shipping
