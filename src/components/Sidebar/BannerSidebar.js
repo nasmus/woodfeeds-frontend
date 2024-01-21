@@ -1,14 +1,14 @@
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import React, { useEffect, useState } from "react";
 import "../../css/Slider.css";
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
 
 function BannerSidebar() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const banners = [
-    "woodfeeds_banner.png",
-    "woodfeeds_banar.png",
+    "banner2.jpg",
+    
     // Add your banner image URLs here
   ];
 
@@ -38,30 +38,56 @@ function BannerSidebar() {
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, [nextBanner]);
 
   return (
-    <div className="banner-slider">
-      <div>
-        <div className="image">
-          <img 
-          src={banners[currentIndex]} 
-          alt={`Slide ${currentIndex + 1}`}
-            className={` border slider-image ${currentIndex === currentIndex ? 'active' : ''}`}
-          />
+    <div className="flex flex-col lg:flex-row px-3 lg:px-10 ">
+      <div className="lg:w-4/6">
+        {" "}
+        <div className="banner-slider">
+          <div>
+            <div className="image">
+              <img
+                src={banners[currentIndex]}
+                alt={`Slide ${currentIndex + 1}`}
+                className={`object-fill rounded-xl border slider-image ${
+                  currentIndex === currentIndex ? "active" : ""
+                }`}
+              />
+            </div>
+            <button onClick={previousBanner}>
+              {" "}
+              <ArrowBackIosNewIcon />{" "}
+            </button>
+            <button onClick={nextBanner}>
+              {" "}
+              <ArrowForwardIosIcon />{" "}
+            </button>
+          </div>
+          <div className="slider-dots">
+            {banners.map((_, index) => (
+              <div
+                key={index}
+                className={`slider-dot ${
+                  index === currentIndex ? "active" : ""
+                }`}
+                onClick={() => setCurrentIndex(index)}
+              />
+            ))}
+          </div>
         </div>
-        <button onClick={previousBanner}>  <ArrowBackIosNewIcon /> </button>
-        <button onClick={nextBanner}> <ArrowForwardIosIcon /> </button>
-        
       </div>
-      <div className="slider-dots">
-        {banners.map((_, index) => (
-          <div
-            key={index}
-            className={`slider-dot ${index === currentIndex ? 'active' : ''}`}
-            onClick={() => setCurrentIndex(index)}
-          />
-        ))}
+      <div className="hidden lg:w-1/3 lg:flex flex-col mt-[10px] ">
+        <img
+          src="/banner.jpg"
+          className="w-full h-[169px] mb-[10px]  rounded-xl"
+          alt="banner-pic"
+        />
+        <img
+          src="banner3.jpg"
+          className="w-full h-[169px]  rounded-xl"
+          alt="banner-pic"
+        />
       </div>
     </div>
   );
