@@ -35,7 +35,7 @@ function CartScreen() {
     ctxDispatch({ type: "CART_REMOVE_ITEM", payload: item });
   };
   const facebookPixel =()=> {
-    ReactPixel.track('chackout', { productName: `${cartItems.name}`, item: `${cartItems.price},`,quentity:`${cartItems.quantity}`})
+    ReactPixel.track('chackout')
 }
   const checkOutHandler = () => {
     facebookPixel()
