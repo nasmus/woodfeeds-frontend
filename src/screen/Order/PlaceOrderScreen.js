@@ -50,12 +50,12 @@ function PlaceOrderScreen() {
   cart.itemsPrice = round2(
     cart.cartItems.reduce((a, c) => a + c.quantity * c.price, 0)
   );
-  cart.shippingPrice = cart.itemsPrice > 1000 ? round2(200) : round2(100);
+  cart.shippingPrice = cart.itemsPrice > 1000 ? round2(120) : round2(120);
   //cart.taxPrice = round2(0.15 * cart.itemsPrice);
   cart.taxPrice = 0;
   cart.totalPrice = cart.itemsPrice + cart.shippingPrice + cart.taxPrice;
   const facebookPixel=()=>{
-    ReactPixel.track('Purchase', { orderItem: `${[cart.cartItems.name]}`, paymentMethod:`${cart.paymentMethod}`, itemsPrice:`${cart.itemsPrice}`,shippingPrice:`${cart.shippingPrice}`,totalPrice: `${cart.totalPrice}` })
+    ReactPixel.track('Purchase', {value:`${cart.itemsPrice}`,currency:'BDT' ,orderItem: `${cart.cartItems.name}`, paymentMethod:`${cart.paymentMethod}`, itemsPrice:`${cart.itemsPrice}`,shippingPrice:`${cart.shippingPrice}`,totalPrice: `${cart.totalPrice}` })
   }
 
   
