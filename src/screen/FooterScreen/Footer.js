@@ -14,7 +14,8 @@ function Footer() {
         <div className="hidden lg:block lg:max-w-sm lg:my-6">
           <img src={logo} className="w-60" alt="Site Logo" />
           <p className="py-4">
-          Transform Your Space with Exquisite Wooden Wonders - Explore Timeless Furniture at woodfeeds.com
+            Transform Your Space with Exquisite Wooden Wonders - Explore
+            Timeless Furniture at woodfeeds.com
           </p>
         </div>
         <div className="my-8 md:my-0">
@@ -45,6 +46,9 @@ function Footer() {
             <Link className=" no-underline text-white " to="/faq">
               <div className="hover:text-slate-200"> FAQ</div>
             </Link>
+            <Link className=" no-underline text-white " to="/dev">
+              <div className="hover:text-slate-200"> Developed by</div>
+            </Link>
           </div>
         </div>
         <div className="my-8 md:my-0 flex flex-col items-start md:justify-center md:items-center">
@@ -73,7 +77,17 @@ function Footer() {
         </div>
       </div>
       <div className="bg-gradient-to-r from-slate-800 to-slate-700 text-slate-400 flex items-center justify-center p-2.5">
-        <p>©{new Date().getFullYear()} woodfeeds.com . All rights reserved.</p>
+        <p>
+          © {new Date().getFullYear()} woodfeeds.com . All rights reserved.
+          Delevoped by:{" "}
+          <Link
+            className="no-underline text-white hover:text-slate-300"
+            to="/dev"
+          >
+            {" "}
+            <span className=" hover:text-slate-300 transition-colors">Click Here </span>
+          </Link>{" "}
+        </p>
       </div>
     </div>
   );
