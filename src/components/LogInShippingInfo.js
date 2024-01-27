@@ -21,7 +21,7 @@ export default function LogInShippingInfo() {
   const [phoneNumber, setPhoneNumber] = useState(
     shippingAddress.phoneNumber || ""
   );
-  const [shippingCharge, setShippingCharge] = useState(200);
+  const [shippingCharge, setShippingCharge] = useState(120);
 
 
   const [fullName, setName] = useState("");
