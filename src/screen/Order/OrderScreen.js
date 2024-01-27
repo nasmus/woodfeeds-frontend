@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useContext, useEffect, useReducer } from 'react';
+import React, { useContext, useEffect, useReducer,useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Col from 'react-bootstrap/esm/Col';
@@ -36,6 +36,7 @@ function OrderScreen() {
         error:'',
         order:{}
     })
+    const [shippingCharge, setShippingCharge] = useState(120);
 
     useEffect(() => {
         const fatchOrder = async () => {
@@ -119,7 +120,7 @@ function OrderScreen() {
                             ></img>{" "}
                             <Link
                               className="no-underline pl-1"
-                              to={`/product/${item.slug}`}
+                              to={`${process.env.REACT_APP_IMAGE_URL}/product/${item.slug}`}
                             >
                               {item.name.slice(0, 35)}...
                             </Link>
@@ -129,7 +130,7 @@ function OrderScreen() {
                           <span>{item.quantity}</span>
                         </Col>
                         <Col xs={3} md={3}>
-                          ৳{item.price}
+                          ৳{item.price+shippingCharge}
                         </Col>
                       </Row>
                     </ListGroup.Item>

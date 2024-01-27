@@ -102,12 +102,6 @@ function ProductScreen() {
     }
   }, [product.multipleImage]);
 
-  
-
-  //facebook pixel setup
-  // useEffect(() => {
-  //   ReactPixel.track('ViewContent', { name: `${product.name}`, product_id:`${product._id}`, product_price:`${product.price}` })
-  // },[product.name,product._id,product.price])
 
   return loading ? (
     <LoadingBox />
@@ -180,7 +174,7 @@ function ProductScreen() {
               Product Materials: <b>{product.productMaterials}</b>
             </li>
             <li style={{ listStyleType: "square" }}>
-              200 shipping charge applicable form every product
+              120 shipping charge applicable form every product
             </li>
           </ul>
           <div className="button">
