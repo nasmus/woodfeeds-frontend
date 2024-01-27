@@ -25,9 +25,10 @@
 }
 .grid_viev_product {
   display: flex;
-  gap: 40px;
+  gap: 20px;
   align-items: center;
   justify-content: center;
+  padding-top: 20px;
 }
 
 .grid_viev_product > img {
