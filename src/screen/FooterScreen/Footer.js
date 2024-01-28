@@ -78,14 +78,12 @@ function Footer() {
       </div>
       <div className="bg-gradient-to-r from-slate-800 to-slate-700 text-slate-400 flex items-center justify-center p-2.5">
         <p>
-          © {new Date().getFullYear()} woodfeeds.com . All rights reserved.
-          Delevoped by:{" "}
-          <Link
-            className="no-underline text-white hover:text-slate-300"
+          © {new Date().getFullYear()} woodfeeds.com . All rights reserved. 
+           <Link
+            className="no-underline text-white  hover:text-slate-300 transition-colors"
             to="/dev"
           >
-            {" "}
-            <span className=" hover:text-slate-300 transition-colors">Click Here </span>
+             Delevoped by
           </Link>{" "}
         </p>
       </div>
