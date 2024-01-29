@@ -7,6 +7,8 @@ import HomeScreen from "./screen/HomeScreen";
 import ProductScreen from "./screen/ProudctScreen/ProductScreen";
 //import { Store } from './Store';
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
+import DevPage1 from "./components/DevPage1";
 import CategoryHeader from "./components/Header/CategoryHeader";
 import Header from "./components/Header/Header";
 import AboutUs from "./pages/AboutUs";
@@ -28,7 +30,6 @@ import ResetPassword from "./screen/SignUp/ResetPassword";
 import SendEmail from "./screen/SignUp/SendEmail";
 import SignInScreen from "./screen/SignUp/SignInScreen";
 import SignUpScreen from "./screen/SignUp/SignUpScreen";
-import { Helmet } from "react-helmet-async";
 
 
 function App() {
@@ -43,7 +44,7 @@ function App() {
 
   return (
     <BrowserRouter>
-    <Helmet>
+      <Helmet>
         <title>Woodfeeds</title>
       </Helmet>
       <div className="d-flex flex-column main_section">
@@ -73,10 +74,11 @@ function App() {
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/terms-conditions" element={<TermsConditions />} />
             <Route path="/return-refund" element={<ReturnRefund />} />
-            <Route path="/category/:id/:slug" element={ <CategoryPage /> } />
-            <Route path="/reset_password/:token" element={ <ResetPassword /> } />
-            <Route path="/forgot-password" element={ <SendEmail /> } />
-            <Route path="*" element={ <NotFound /> } />
+            <Route path="/category/:id/:slug" element={<CategoryPage />} />
+            <Route path="/reset_password/:token" element={<ResetPassword />} />
+            <Route path="/forgot-password" element={<SendEmail />} />
+            <Route path="/dev" element={<DevPage1 />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <footer className=" mt-16 ">
