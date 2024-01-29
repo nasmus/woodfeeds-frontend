@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Product from "../../components/Product";
 import { Link } from "react-router-dom";
+import Product from "../../components/Product";
 
 function CategoryProduct() {
   const [productsBookShelf, setProductsBookShelf] = useState([]);
@@ -55,7 +55,7 @@ function CategoryProduct() {
         ))}
       </div>
 
-      <div className="flex gap-3 p-4 ">
+      <div className="flex gap-3 p-4 justify-center items-center ">
         <div>
           <img
             className="object-cover w-full h-auto rounded-tl-xl rounded-bl-xl"
