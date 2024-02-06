@@ -1,11 +1,13 @@
 import axios from "axios";
 import React, { useContext } from "react";
+import ReactPixel from 'react-facebook-pixel';
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Store } from "../Store";
 import '../css/Product.css';
 import Rating from "./Review/Rating";
-import ReactPixel from 'react-facebook-pixel';
 
 
 function Product(props) {
@@ -37,14 +39,19 @@ function Product(props) {
     <>
       <div className="product-card">
         <Link to={`/product/${product.slug}`}>
-          <img
+          <LazyLoadImage
             className="main-image"
             src={`${process.env.REACT_APP_IMAGE_URL}/images/${product.image}`}
             //src={product.image}
             alt={product.name}
+            effect="blur"
           />
         </Link>
-        <Link className="product-card_link" to={`/product/${product.slug}`} onClick={facebookPixel} >
+        <Link
+          className="product-card_link"
+          to={`/product/${product.slug}`}
+          onClick={facebookPixel}
+        >
           <p>{product.name}</p>
         </Link>
         <span>
