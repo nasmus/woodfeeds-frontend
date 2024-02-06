@@ -1,6 +1,8 @@
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import React, { useEffect, useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import "../../css/Slider.css";
 
 
@@ -8,6 +10,7 @@ function BannerSidebar() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const banners = [
     "banner2.jpg",
+    "banner4.jpg"
     
     // Add your banner image URLs here
   ];
@@ -47,7 +50,7 @@ function BannerSidebar() {
         <div className="banner-slider">
           <div>
             <div className="image">
-              <img
+              <LazyLoadImage
                 src={banners[currentIndex]}
                 alt={`Slide ${currentIndex + 1}`}
                 className={`object-fill rounded-xl border slider-image ${
@@ -78,15 +81,17 @@ function BannerSidebar() {
         </div>
       </div>
       <div className="hidden lg:w-1/3 lg:flex flex-col mt-[10px] ">
-        <img
+        <LazyLoadImage
           src="/banner.jpg"
           className="w-full h-[169px] mb-[10px]  rounded-xl"
           alt="banner-pic"
+          effect='blur'
         />
-        <img
+        <LazyLoadImage
           src="banner3.jpg"
           className="w-full h-[169px]  rounded-xl"
           alt="banner-pic"
+          effect='blur'
         />
       </div>
     </div>
