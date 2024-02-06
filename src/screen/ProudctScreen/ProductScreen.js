@@ -3,6 +3,8 @@ import React, { useContext, useEffect, useReducer, useState } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import ReactPixel from 'react-facebook-pixel';
 import { Helmet } from "react-helmet-async";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Store } from "../../Store";
@@ -14,6 +16,7 @@ import RatingSubmit from "../../components/Review/RatingSubmit";
 import Review from "../../components/Review/Review";
 import "../../css/ProductScreen.css";
 import { getError } from "../../utils";
+
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -114,23 +117,25 @@ function ProductScreen() {
       </Helmet>
       <div className="product_section">
         <div className="images">
-          <div className="flex items-center justify-center"> 
-          
-            <img
+          <div className="flex items-center justify-center">
+            <LazyLoadImage
               className="main_image max-h-96 object-scale-down"
               src={`${process.env.REACT_APP_IMAGE_URL}/images/${activeImage}`}
-              alt=""
+                  alt=""
+                  effect="blur"
             />
           </div>
           <div className="grid_viev_product">
             {imageValue.length > 0
               ? imageValue.map((image, index) => {
                   return (
-                    <img
+                    <LazyLoadImage
                       key={index}
                       src={`${process.env.REACT_APP_IMAGE_URL}/images/${image}`}
                       alt=""
                       onClick={() => setActiveImage(image)}
+                      className="h-18 w-16"
+                      effect="blur"
                     />
                   );
                 })

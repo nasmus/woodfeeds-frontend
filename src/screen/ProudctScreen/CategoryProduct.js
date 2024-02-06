@@ -1,5 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import { Link } from "react-router-dom";
 import Product from "../../components/Product";
 
@@ -37,7 +39,6 @@ function CategoryProduct() {
 
   return (
     <div className=" mt-2 mb-2 ">
-      
       <div className="flex my-3 justify-between items-center px-3 py-2 bg-slate-100 mx-1 rounded-md">
         <h3 className="">Book Shelf</h3>
         <Link to="https://woodfeeds.com/category/65a2710c006dc1d348d149c6/Book%20Shelf">
@@ -57,14 +58,16 @@ function CategoryProduct() {
 
       <div className="flex gap-3 p-4 justify-center items-center ">
         <div>
-          <img
+          <LazyLoadImage
             className="object-cover w-full h-auto rounded-tl-xl rounded-bl-xl"
             src="/banner.jpg"
             alt="Small1"
+            effect="blur"
           />
         </div>
         <div>
-          <img
+          <LazyLoadImage
+            effect="blur"
             className="object-cover w-full h-auto rounded-br-xl rounded-tr-xl"
             src="/banner1.jpg"
             alt="Small"

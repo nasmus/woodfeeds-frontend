@@ -31,11 +31,6 @@
   padding-top: 20px;
 }
 
-.grid_viev_product > img {
-  height: 60px;
-  width: 80px;
-}
-
 .grid_viev_product > img:hover {
   cursor: pointer;
 }
