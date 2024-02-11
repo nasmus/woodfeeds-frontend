@@ -1,23 +1,28 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import Product from "../components/Product";
 import { Helmet } from "react-helmet-async";
+import { useParams } from "react-router-dom";
+import LoadingBox from "../components/LoadingBox";
+import Product from "../components/Product";
 
 function CategoryPage() {
   const [categoryValue, setCategoryValue] = useState([]);
   const param = useParams();
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage] = useState(10);
+  const [isLoading, setIsLoading] = useState();
 
   useEffect(() => {
     const fatchData = async () => {
+      setIsLoading(true);
       const category = await axios.get(
         `/api/category/${param.id}/${param.slug}`
       );
+      
       if (category) {
         setCategoryValue(category.data);
       }
+      setIsLoading(false)
     };
     fatchData();
   }, [param.id, param.slug]);
@@ -34,7 +39,11 @@ function CategoryPage() {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div>
+    
+      isLoading ? (
+     <LoadingBox />
+   ) : (
+      <div>
       <Helmet>
         <title>Category</title>
       </Helmet>
@@ -61,6 +70,7 @@ function CategoryPage() {
         ))}
       </div>
     </div>
+   )
   );
 }
 
