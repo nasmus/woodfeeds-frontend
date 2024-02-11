@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useReducer } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
 import Product from "../components/Product";
@@ -27,14 +27,19 @@ function HomeScreen(props) {
     error: "",
   });
   //const [products,setProducts] = useState([]); // if we use useState then use it
+
+  const [isLoading, setIsLoading] = useState(true);
   
   useEffect(() => {
     const fatchData = async () => {
       dispatch({ type: "FATCH_REQUEST" });
       try {
+        setIsLoading(true);
         const result = await axios.get(`/api/products`);
+        setIsLoading(false);
         dispatch({ type: "FATCH_SUCCESS", payload: result.data });
       } catch (err) {
+        setIsLoading(false);
         dispatch({ type: "FATCH_FAILLED", payload: err.message });
       }
 
@@ -52,7 +57,7 @@ function HomeScreen(props) {
       } */}
 
       <div className="products">
-        {loading ? (
+        {isLoading ? (
           <LoadingBox />
         ) : error ? (
           <MessageBox>{error}</MessageBox>

@@ -4,6 +4,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Store } from "../../Store";
+import LoadingBox from "../LoadingBox";
+
 
 function RatingSubmit(props) {
   const navigate = useNavigate();
@@ -14,10 +16,12 @@ function RatingSubmit(props) {
   const { state } = useContext(Store);
   const { userInfo } = state;
 
+  const [isLoading, setIsLoading] = useState(true);
   
 
   useEffect(() => {
     const fatchData = async () => {
+      setIsLoading(true);
       const status = await axios.get(
         `/api/delevary_status/${userInfo._id}/status/${props.product._id}`,
         { headers: { Authorization: `Bearer ${userInfo.token}` } }
@@ -28,18 +32,20 @@ function RatingSubmit(props) {
       } else {
         setDelevaryStatus(false);
       }
+      setIsLoading(false)
     };
     fatchData();
   }, [props.product._id, userInfo._id, userInfo.token]);
   
   useEffect(() => {
     const fetchData = async () => {
+      setIsLoading(true);
       const {data} = await axios.get(
         `/api/user_review/find_user/${props.product._id}`,
         { headers: { Authorization: `Bearer ${userInfo.token}` } }
       );
       setVisibleComment(data);
-      
+      setIsLoading(false);
       
     }
     fetchData();
@@ -51,12 +57,13 @@ function RatingSubmit(props) {
       toast.error("Please enter comment and rating");
       return;
     }
-
+    setIsLoading(true);
     const { data } = await axios.post(
       `/api/user_review/${props.product._id}/reviews`,
       { rating, comment, name: userInfo.name },
       { headers: { Authorization: `Bearer ${userInfo.token}` } }
     );
+    setIsLoading(false);
     props.product.reviews.unshift(data.review);
     props.product.numReviews = data.numReviews;
     props.product.rating = data.rating;
@@ -68,7 +75,10 @@ function RatingSubmit(props) {
   };
 
   return (
-    <>
+    isLoading ? (
+      <LoadingBox />
+    ) : (
+      <div>
       {delevaryStatus && visibleComment ? (
         <div className="lg:w-2/3 m-3">
          
@@ -110,7 +120,7 @@ function RatingSubmit(props) {
       ) : (
         ""
       )}
-    </>
+    </div>) 
   );
 }
 
