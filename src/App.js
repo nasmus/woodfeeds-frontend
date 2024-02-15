@@ -8,7 +8,7 @@ import ProductScreen from "./screen/ProudctScreen/ProductScreen";
 //import { Store } from './Store';
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import DevPage1 from "./components/DevPage1";
+import DevPage1 from "./pages/DevPage1";
 import CategoryHeader from "./components/Header/CategoryHeader";
 import Header from "./components/Header/Header";
 import AboutUs from "./pages/AboutUs";

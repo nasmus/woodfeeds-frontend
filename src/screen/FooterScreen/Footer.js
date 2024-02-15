@@ -46,9 +46,7 @@ function Footer() {
             <Link className=" no-underline text-white " to="/faq">
               <div className="hover:text-slate-200"> FAQ</div>
             </Link>
-            <Link className=" no-underline text-white " to="/dev">
-              <div className="hover:text-slate-200"> Developed by</div>
-            </Link>
+            
           </div>
         </div>
         <div className="my-8 md:my-0 flex flex-col items-start md:justify-center md:items-center">
@@ -80,7 +78,7 @@ function Footer() {
         <p>
           © {new Date().getFullYear()} woodfeeds.com . All rights reserved. 
            <Link
-            className="no-underline text-white  hover:text-slate-300 transition-colors"
+            className=" text-white pl-2 hover:text-slate-300 transition-colors"
             to="/dev"
           >
              Delevoped by
