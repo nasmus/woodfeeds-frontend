@@ -30,6 +30,7 @@ import ResetPassword from "./screen/SignUp/ResetPassword";
 import SendEmail from "./screen/SignUp/SendEmail";
 import SignInScreen from "./screen/SignUp/SignInScreen";
 import SignUpScreen from "./screen/SignUp/SignUpScreen";
+import ScrollToTop from "./ScrollToTop";
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
 
   return (
     <BrowserRouter>
+    <ScrollToTop />
       <Helmet>
         <title>Woodfeeds</title>
       </Helmet>

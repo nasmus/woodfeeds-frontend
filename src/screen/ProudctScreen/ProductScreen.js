@@ -5,7 +5,7 @@ import ReactPixel from 'react-facebook-pixel';
 import { Helmet } from "react-helmet-async";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import { useNavigate, useParams,useLocation } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Store } from "../../Store";
 import LoadingBox from "../../components/LoadingBox";
@@ -42,7 +42,6 @@ function ProductScreen() {
   const navigate = useNavigate();
   const params = useParams();
   const { slug } = params;
-  const { pathname } = useLocation();
 
   useEffect(() => {
     const fatchData = async () => {
@@ -58,9 +57,6 @@ function ProductScreen() {
   }, [slug]);
 
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
 
   useEffect(() => {
     const fatchData = async () => {
