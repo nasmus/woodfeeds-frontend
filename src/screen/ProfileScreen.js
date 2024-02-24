@@ -1,5 +1,6 @@
 import React, { useContext, useReducer, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useLocation } from "react-router-dom";
+
 
 import axios from "axios";
 import Form from "react-bootstrap/Form";
@@ -7,6 +8,7 @@ import { toast } from "react-toastify";
 import { Store } from "../Store";
 import { getError } from "../utils";
 import { Helmet } from "react-helmet-async";
+
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -31,6 +33,7 @@ export default function ProfileScreen() {
   const [phone, setPhone] = useState(userInfo.phone);
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const { pathname } = useLocation();
 
   const [{ loadingUpdate }, dispatch] = useReducer(reducer, {
     loadingUpdate: false,
@@ -70,6 +73,10 @@ export default function ProfileScreen() {
       navigate("/");
     }
   }, [userInfo, navigate]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <div className="container small-container">
