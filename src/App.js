@@ -8,7 +8,7 @@ import ProductScreen from "./screen/ProudctScreen/ProductScreen";
 //import { Store } from './Store';
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import DevPage1 from "./components/DevPage1";
+import DevPage1 from "./pages/DevPage1";
 import CategoryHeader from "./components/Header/CategoryHeader";
 import Header from "./components/Header/Header";
 import AboutUs from "./pages/AboutUs";
@@ -30,6 +30,7 @@ import ResetPassword from "./screen/SignUp/ResetPassword";
 import SendEmail from "./screen/SignUp/SendEmail";
 import SignInScreen from "./screen/SignUp/SignInScreen";
 import SignUpScreen from "./screen/SignUp/SignUpScreen";
+import ScrollToTop from "./ScrollToTop";
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
 
   return (
     <BrowserRouter>
+    <ScrollToTop />
       <Helmet>
         <title>Woodfeeds</title>
       </Helmet>

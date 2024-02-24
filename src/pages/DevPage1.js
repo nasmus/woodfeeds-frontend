@@ -1,11 +1,10 @@
 export default function DevPage1(){
   return (
     <div>
-      <div className="flex justify-center items-center flex-col">
+      <div className="flex justify-center items-center flex-col mb-5 ">
         <h3>Developed By</h3>
-        <hr className="border-2 w-[14%] " />
       </div>
-      <div className="bg-slate-100 rounded-xl py-2 md:py-10 w-[95%]  md:w-2/5 md:ml-[28rem] ml-[13px]   flex justify-center items-center ">
+      <div className="bg-slate-100 rounded-xl py-2 md:py-10 w-[95%]  md:w-2/5 md:ml-[28rem] ml-[13px] flex m-auto ">
         <figure class="flex justify-center items-center rounded-xl p-8 md:p-0">
           <img
             class="w-24 h-24 md:w-48 md:h-auto md:rounded-none rounded-full me-10 md:me-0 "

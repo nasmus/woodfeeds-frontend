@@ -56,9 +56,7 @@ function ProductScreen() {
     fatchData();
   }, [slug]);
 
-  window.scrollTo({
-    behavior: "smooth",
-  });
+
 
   useEffect(() => {
     const fatchData = async () => {

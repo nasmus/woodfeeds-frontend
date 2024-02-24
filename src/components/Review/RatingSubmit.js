@@ -27,12 +27,12 @@ function RatingSubmit(props) {
         { headers: { Authorization: `Bearer ${userInfo.token}` } }
       );
       //setDelevaryStatus(status)
-      if (status.data === "Panding") {
+      if (status.data === "Received") {
         setDelevaryStatus(true);
       } else {
         setDelevaryStatus(false);
       }
-      setIsLoading(false)
+      setIsLoading(false) 
     };
     fatchData();
   }, [props.product._id, userInfo._id, userInfo.token]);
