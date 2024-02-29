@@ -56,7 +56,7 @@ function Product(props) {
         <span>
          
         </span>
-        <p className="pt-2">
+        <p className="pt-2 !text-orange-600">
           {/* <i class="fa-solid fa-bangladeshi-taka-sign"></i> */}৳
           {product.price}
         </p>
