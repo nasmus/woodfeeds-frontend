@@ -11,9 +11,6 @@ import { Store } from "../../Store";
 import LoadingBox from "../../components/LoadingBox";
 import MessageBox from "../../components/MessageBox";
 import Product from "../../components/Product";
-import Rating from "../../components/Review/Rating";
-import RatingSubmit from "../../components/Review/RatingSubmit";
-import Review from "../../components/Review/Review";
 import "../../css/ProductScreen.css";
 import { getError } from "../../utils";
 
@@ -143,11 +140,12 @@ function ProductScreen() {
         <div className="product_content p-4">
           <h1>{product.name}</h1>
           <p>
-            <Rating rating={product.rating} numReviews={product.numReviews} />
+            {/* <Rating rating={product.rating} numReviews={product.numReviews} />
             <b className=" text-cyan-500 ">
               {product.numReviews ? product.numReviews : 0} reviews
-            </b>{" "}
-            | <b className=" text-orange-600 ">{product.countInStock} Stock</b>
+            </b>
+                | */}
+                <b className=" text-orange-600 ">{product.countInStock} Stock</b>
           </p>
           <h5>
             {" "}
@@ -210,7 +208,7 @@ function ProductScreen() {
           })}
         </div>
       </div>
-      {userinfo ? (
+      {/* {userinfo ? (
         <div>
           <RatingSubmit product={product} />
         </div>
@@ -219,7 +217,7 @@ function ProductScreen() {
       )}
       <div className="product_review">
         <Review product={product} />
-      </div>
+      </div> */}
     </div>
   );
 }
