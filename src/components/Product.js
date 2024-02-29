@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Store } from "../Store";
 import '../css/Product.css';
-import Rating from "./Review/Rating";
 
 
 function Product(props) {
@@ -55,12 +54,9 @@ function Product(props) {
           <p>{product.name}</p>
         </Link>
         <span>
-          <Rating
-            rating={product.rating}
-            numReviews={product.numReviews ? product.numReviews : 0}
-          />
+         
         </span>
-        <p>
+        <p className="pt-2">
           {/* <i class="fa-solid fa-bangladeshi-taka-sign"></i> */}৳
           {product.price}
         </p>
