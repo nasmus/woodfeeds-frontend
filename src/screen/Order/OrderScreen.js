@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useContext, useEffect, useReducer,useState } from 'react';
+import React, { useContext, useEffect, useReducer, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Col from 'react-bootstrap/esm/Col';
@@ -114,7 +114,7 @@ function OrderScreen() {
                           <div className="flex items-center lg:w-[90%]">
                             <img
                               style={{ height: "60px" }}
-                              src={`/images/${item.image}`}
+                              src={`${process.env.REACT_APP_IMAGE_URL}/images/${item.image}`}
                               alt={item.name}
                               className="img-fluid rounded img-thumbnail "
                             ></img>{" "}
@@ -130,7 +130,7 @@ function OrderScreen() {
                           <span>{item.quantity}</span>
                         </Col>
                         <Col xs={3} md={3}>
-                          ৳{item.price+shippingCharge}
+                          ৳{item.price + shippingCharge}
                         </Col>
                       </Row>
                     </ListGroup.Item>
