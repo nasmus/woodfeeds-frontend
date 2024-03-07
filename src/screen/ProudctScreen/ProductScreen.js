@@ -119,8 +119,8 @@ function ProductScreen() {
             <LazyLoadImage
               className="main_image max-h-96 object-scale-down"
               src={`${process.env.REACT_APP_IMAGE_URL}/images/${activeImage}`}
-                  alt=""
-                  effect="blur"
+              alt=""
+              effect="blur"
             />
           </div>
           <div className="grid_viev_product">
@@ -146,9 +146,8 @@ function ProductScreen() {
             <Rating rating={product.rating} numReviews={product.numReviews} />
             <b className=" text-cyan-500 ">
               {product.numReviews ? product.numReviews : 0} reviews
-            </b>
-                |
-                <b className=" text-orange-600 ">{product.countInStock} Stock</b>
+            </b>{" "}
+            | <b className=" text-orange-600 ">{product.countInStock} Stock</b>
           </p>
           <h5>
             {" "}
