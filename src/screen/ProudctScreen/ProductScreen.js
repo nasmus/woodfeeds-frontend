@@ -112,6 +112,9 @@ function ProductScreen() {
     <div>
       <Helmet>
         <title>{product.name}</title>
+        <meta property="og:title" content={`${product.name} | WoodFeeds.com`} />
+         <meta property="og:description" content="WoodFeeds.com is a largest e-commerce website and interior design platform where you can buy wooden aesthetic product." />
+         <meta property="og:image" content={`${process.env.REACT_APP_IMAGE_URL}/images/${activeImage}`} />
       </Helmet>
       <div className="product_section">
         <div className="images">
