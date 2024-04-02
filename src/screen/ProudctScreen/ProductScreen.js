@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useContext, useEffect, useReducer, useState } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
-import ReactPixel from 'react-facebook-pixel';
+import ReactPixel from "react-facebook-pixel";
 import { Helmet } from "react-helmet-async";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -16,7 +16,6 @@ import RatingSubmit from "../../components/Review/RatingSubmit";
 import Review from "../../components/Review/Review";
 import "../../css/ProductScreen.css";
 import { getError } from "../../utils";
-
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -56,8 +55,6 @@ function ProductScreen() {
     fatchData();
   }, [slug]);
 
-
-
   useEffect(() => {
     const fatchData = async () => {
       const randomData = await axios.get(`/api/random/product_suggest`);
@@ -73,16 +70,20 @@ function ProductScreen() {
   const { cart } = state;
   const userinfo = localStorage.getItem("userInfo");
 
-  const facebookPixel =()=> {
-    ReactPixel.track('add_to_cart', { productName: `${product.name}`, item: `${product.price}`, quentity: `${product.quentity}`})
-  }
+  const facebookPixel = () => {
+    ReactPixel.track("add_to_cart", {
+      productName: `${product.name}`,
+      item: `${product.price}`,
+      quentity: `${product.quentity}`,
+    });
+  };
 
   const addToCartHandler = async () => {
     const existItem = cart.cartItems.find((x) => x._id === product._id);
     const quantity = existItem ? existItem.quantity + 1 : 1;
     const { data } = await axios.get(`/api/products/${product._id}`);
-    facebookPixel()
-    
+    facebookPixel();
+
     if (data.countInStock < quantity) {
       toast.error("Sorry, Product is out of stock");
       return;
@@ -103,7 +104,6 @@ function ProductScreen() {
     }
   }, [product.multipleImage]);
 
-
   return loading ? (
     <LoadingBox />
   ) : error ? (
@@ -119,8 +119,8 @@ function ProductScreen() {
             <LazyLoadImage
               className="main_image max-h-96 object-scale-down"
               src={`${process.env.REACT_APP_IMAGE_URL}/images/${activeImage}`}
-                  alt=""
-                  effect="blur"
+              alt=""
+              effect="blur"
             />
           </div>
           <div className="grid_viev_product">
