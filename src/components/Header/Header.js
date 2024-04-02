@@ -29,7 +29,7 @@ function Header() {
                 <div className="header-logo">
                   <Link to="/">
                     <img
-                      style={{ width: "230px" }}
+                      style={{ width: "200px" }}
                       src={logo}
                       alt="Site Logo"
                     />
