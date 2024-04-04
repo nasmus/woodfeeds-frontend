@@ -10,7 +10,7 @@ export default function DevPage1() {
         <h3>Developed By</h3>
       </div>
       <section className="md:flex md:justify-around">
-        <div className="bg-slate-100 mx-10 my-5 p-4 rounded-3xl flex justify-between gap-2 shadow-lg lg:w-[540px]">
+        <div className="bg-slate-100 mx-2 my-5 p-4 rounded-3xl flex justify-between gap-2 shadow-lg lg:w-[540px]">
           <div className="flex items-center gap-2">
             <img
               alt=""
@@ -40,7 +40,7 @@ export default function DevPage1() {
             </Link>
           </div>
         </div>
-        <div className="bg-slate-100 mx-10 my-5 p-4 rounded-3xl flex justify-between shadow-lg lg:w-[512px]">
+        <div className="bg-slate-100 mx-2 my-5 p-4 rounded-3xl flex justify-between shadow-lg lg:w-[512px]">
           <div className="flex items-center gap-2">
             <img
               alt=""
