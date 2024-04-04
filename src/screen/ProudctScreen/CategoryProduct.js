@@ -93,7 +93,7 @@ function CategoryProduct() {
       </div>
 
       <div className="flex my-3 justify-between items-center px-3 py-2 bg-slate-100 mx-1 rounded-md">
-        <h3 className="">Bad Shide shelf</h3>
+        <h3 className="">Bed Side Shelf</h3>
         <Link to="https://woodfeeds.com/category/65a29aeec8907a4d2d758f53/Bed%20Side%20Shelf">
           <button
             type="button"
