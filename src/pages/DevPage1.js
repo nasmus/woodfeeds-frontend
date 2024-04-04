@@ -1,28 +1,79 @@
-export default function DevPage1(){
+import fbicon from "../css/facebook.svg";
+import githubicon from "../css/github.svg";
+
+import { Link } from 'react-router-dom';
+
+export default function DevPage1() {
   return (
     <div>
       <div className="flex justify-center items-center flex-col mb-5 ">
         <h3>Developed By</h3>
       </div>
-      <div className="bg-slate-100 rounded-xl py-2 md:py-10 w-[95%]  md:w-2/5 md:ml-[28rem] ml-[13px] flex m-auto ">
-        <figure class="flex justify-center items-center rounded-xl p-8 md:p-0">
-          <img
-            class="w-24 h-24 md:w-48 md:h-auto md:rounded-none rounded-full me-10 md:me-0 "
-            src="https://avatars.githubusercontent.com/u/58904411?v=4"
-            alt=""
-          />
-          <div class="pt-6 md:p-8 text-center md:text-left space-y-4 ">
-            <figcaption class="font-medium">
-              <div class="text-sky-500 dark:text-sky-400">
-                MD NASMUS SHAHADAT
-              </div>
-              <div class="text-slate-700 dark:text-slate-500">
-                Software Engineer,Dhaka
-              </div>
-            </figcaption>
+      <section className="md:flex md:justify-around">
+        <div className="bg-slate-100 mx-10 my-5 p-4 rounded-3xl flex justify-between gap-2 shadow-lg lg:w-[540px]">
+          <div className="flex items-center gap-2">
+            <img
+              alt=""
+              className="h-28 w-28"
+              src="https://avatars.githubusercontent.com/u/58904411?v=4"
+            />
+            <div className="">
+              <h1 className="text-xl font-bold">MD NASMUS SHAHADAT</h1>
+              <p className="text-sm text-slate-600">Software Engineer</p>
+            </div>
           </div>
-        </figure>
-      </div>
+          <div className="flex items-center gap-3">
+            <Link target="_blank" to="https://www.facebook.com/nasmus1234">
+              <img
+                alt=""
+                className="h-8 hover:opacity-60 hover:cursor-pointer ease-in-out transition-all duration-300"
+                src={fbicon}
+              />
+            </Link>
+
+            <Link to="https://github.com/nasmus" target="_blank">
+              <img
+                alt=""
+                className="h-8 hover:opacity-60 hover:cursor-pointer ease-in-out transition-all duration-300"
+                src={githubicon}
+              />
+            </Link>
+          </div>
+        </div>
+        <div className="bg-slate-100 mx-10 my-5 p-4 rounded-3xl flex justify-between shadow-lg lg:w-[512px]">
+          <div className="flex items-center gap-2">
+            <img
+              alt=""
+              className="h-28 w-28"
+              src="https://avatars.githubusercontent.com/u/92126672?v=4"
+            />
+            <div className="">
+              <h1 className="text-xl font-bold">Shamim Reza</h1>
+              <p className="text-sm text-slate-600">Software Developer</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-3">
+            <Link
+              target="_blank"
+              to="https://www.facebook.com/5H4M1M.HUNT3R.official/"
+            >
+              <img
+                alt=""
+                className="h-8 hover:opacity-60 hover:cursor-pointer ease-in-out transition-all duration-300"
+                src={fbicon}
+              />
+            </Link>
+
+            <Link to="https://github.com/shamim261" target="_blank">
+              <img
+                alt=""
+                className="h-8 hover:opacity-60 hover:cursor-pointer ease-in-out transition-all duration-300"
+                src={githubicon}
+              />
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
-};
+}

@@ -65,7 +65,7 @@ function Footer() {
                 target="_blank"
                 to="https://www.instagram.com/woodfeeds/"
               >
-                <Instagram className="mx-2  hover:text-slate-300  cursor-pointer" />{" "}
+                <Instagram className="mx-2  hover:text-slate-300  cursor-pointer" />
               </Link>
               <Link className=" !text-white" target="_blank" to="#">
                 <SubscriptionsTwoTone className="mx-2  hover:text-slate-300  cursor-pointer" />
@@ -74,15 +74,15 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="bg-gradient-to-r from-slate-800 to-slate-700 text-slate-400 flex items-center justify-center p-2.5">
+      <div className="bg-gradient-to-r from-slate-800 to-slate-700 text-slate-400 flex items-center justify-center text-center p-2.5">
         <p>
-          © {new Date().getFullYear()} woodfeeds.com . All rights reserved. 
+          © {new Date().getFullYear()} woodfeeds.com. All rights reserved. 
            <Link
             className=" text-white pl-2 hover:text-slate-300 transition-colors"
-            to="/dev"
+            to="/developer"
           >
              Delevoped by
-          </Link>{" "}
+          </Link>
         </p>
       </div>
     </div>

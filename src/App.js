@@ -8,10 +8,11 @@ import ProductScreen from "./screen/ProudctScreen/ProductScreen";
 //import { Store } from './Store';
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import DevPage1 from "./pages/DevPage1";
+import ScrollToTop from "./ScrollToTop";
 import CategoryHeader from "./components/Header/CategoryHeader";
 import Header from "./components/Header/Header";
 import AboutUs from "./pages/AboutUs";
+import DevPage1 from "./pages/DevPage1";
 import ReturnRefund from './pages/ReturnRefund';
 import TermsConditions from "./pages/Termsconditions";
 import FAQ from "./pages/faq";
@@ -30,7 +31,6 @@ import ResetPassword from "./screen/SignUp/ResetPassword";
 import SendEmail from "./screen/SignUp/SendEmail";
 import SignInScreen from "./screen/SignUp/SignInScreen";
 import SignUpScreen from "./screen/SignUp/SignUpScreen";
-import ScrollToTop from "./ScrollToTop";
 
 
 function App() {
@@ -79,7 +79,7 @@ function App() {
             <Route path="/category/:id/:slug" element={<CategoryPage />} />
             <Route path="/reset_password/:token" element={<ResetPassword />} />
             <Route path="/forgot-password" element={<SendEmail />} />
-            <Route path="/dev" element={<DevPage1 />} />
+            <Route path="/developer" element={<DevPage1 />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
