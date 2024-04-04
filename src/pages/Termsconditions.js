@@ -82,7 +82,7 @@ export default function TermsConditions() {
       </p>
       <p>
         If you have any questions about this Agreement, please contact us at
-        legal@woodfeeds.com.
+        woodfeeds@gmail.com.
       </p>
     </div>
   );
