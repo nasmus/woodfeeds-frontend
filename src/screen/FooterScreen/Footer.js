@@ -21,10 +21,10 @@ function Footer() {
         <div className="my-8 md:my-0">
           <h3 className="font-semibold text-xl py-3 text-white">Contact Us</h3>
           <p>
-            Kazipur
-            <br /> Sirajganj-6710.
+            Sirajganj
+            <br /> Rajshahi, Bangladesh
             <br />
-            Email: support@woodfeeds.com
+            Email: <a href="mailto:woodfeeds@gmail.com">woodfeeds@gmail.com</a>
           </p>
           <p></p>
           <p className="pt-2"></p>
@@ -46,7 +46,6 @@ function Footer() {
             <Link className=" no-underline text-white " to="/faq">
               <div className="hover:text-slate-200"> FAQ</div>
             </Link>
-            
           </div>
         </div>
         <div className="my-8 md:my-0 flex flex-col items-start md:justify-center md:items-center">
@@ -76,12 +75,12 @@ function Footer() {
       </div>
       <div className="bg-gradient-to-r from-slate-800 to-slate-700 text-slate-400 flex items-center justify-center text-center p-2.5">
         <p>
-          © {new Date().getFullYear()} woodfeeds.com. All rights reserved. 
-           <Link
+          © {new Date().getFullYear()} woodfeeds.com. All rights reserved.
+          <Link
             className=" text-white pl-2 hover:text-slate-300 transition-colors"
             to="/developer"
           >
-             Delevoped by
+            Delevoped by
           </Link>
         </p>
       </div>
