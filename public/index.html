@@ -21,20 +21,39 @@
 
     <!-- Meta Pixel Code -->
     <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '898596378511586');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=898596378511586&ev=PageView&noscript=1"
-  /></noscript>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+      fbq("init", "898596378511586");
+      fbq("track", "PageView");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=898596378511586&ev=PageView&noscript=1"
+    /></noscript>
     <!-- End Meta Pixel Code -->
 
     <!-- End Facebook pixel setup Tag Manager -->
@@ -52,7 +71,7 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-   
+
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
 
     <!--
@@ -107,13 +126,19 @@
     />
     <title>WoodFeeds</title>
     <meta
-    name="description"
-    content="WoodFeeds.com is a largest e-commerce website and interior design platform where you can buy wooden aesthetic product."
-  />
-  <!-- Open Graph Meta tag -->
-  <meta property="og:title" content="WoodFeeds.com | Wooden Interior Design platform" />
-         <meta property="og:description" content="WoodFeeds.com is a largest e-commerce website and interior design platform where you can buy wooden aesthetic product." />
-         <meta property="og:image" content="/logo.png" />
+      name="description"
+      content="WoodFeeds.com is a largest e-commerce website and interior design platform where you can buy wooden aesthetic product."
+    />
+    <!-- Open Graph Meta tag -->
+    <meta
+      property="og:title"
+      content="WoodFeeds.com | Wooden Interior Design platform"
+    />
+    <meta
+      property="og:description"
+      content="WoodFeeds.com is a largest e-commerce website and interior design platform where you can buy wooden aesthetic product."
+    />
+    <meta property="og:image" content="/ogImage.png" />
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->

@@ -8,7 +8,7 @@ export default function FAQ() {
         Welcome to the WoodFeeds FAQ page! Here, we address common queries to
         provide you with quick and informative answers. If you don't find the
         information you're looking for, feel free to reach out to our customer
-        support team at support@woodfeeds.com.
+        support team at woodfeeds@gmail.com.
       </p>
       <h5 className="font-semibold">
         What types of wood do you use in your products?
@@ -32,14 +32,10 @@ export default function FAQ() {
         your order before completing the purchase.
       </p>
       <h5 className="font-semibold">How can I track my order?</h5>
-      <p>
-        Once your order is shipped, you'll receive a confirmation email with a
-        tracking number and a link to track your package. You can also log in to
-        your WoodFeeds account to view order status.
-      </p>
+      <p>You can log in to your WoodFeeds account to view order status.</p>
       <h5 className="font-semibold">What is your return policy?</h5>
       <p>
-        We accept returns within 30 days of the delivery date. Please refer to
+        We accept returns within 3 days of the delivery date. Please refer to
         our detailed Return & Refund Policy for information on how to initiate a
         return.
       </p>
@@ -50,7 +46,7 @@ export default function FAQ() {
         for specific details or contact our support team for assistance.
       </p>
       <h5 className="font-semibold">
-        How can I care for and maintain my wooden furniture?
+        How can I care for and maintain my wooden product?
       </h5>
       <p>
         Generally, avoid exposure to direct sunlight, excessive moisture, and
@@ -59,14 +55,15 @@ export default function FAQ() {
       </p>
       <h5 className="font-semibold">What payment methods do you accept?</h5>
       <p>
-        We accept various payment methods, including bKash, Nagad and Cash on
-        delivery. You can find the complete list during the checkout process.
+        {/* We accept various payment methods, including bKash, Nagad and Cash on
+        delivery. You can find the complete list during the checkout process. */}
+        We accept only Cash on delivery for now.
       </p>
       <h5 className="font-semibold">How can I contact customer support?</h5>
       <p>
         For any further assistance or inquiries, please email our customer
-        support team at support@woodfeeds.com. We aim to respond promptly and
-        help with any questions you may have.
+        support team at woodfeeds@gmail.com. We aim to respond promptly and help
+        with any questions you may have.
       </p>
 
       <p>
