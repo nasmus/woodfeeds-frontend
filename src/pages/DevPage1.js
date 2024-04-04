@@ -10,9 +10,10 @@ export default function DevPage1() {
         <h3>Developed By</h3>
       </div>
       <section className="md:flex md:justify-around">
-        <div className="bg-slate-100 mx-10 my-5 p-2 px-4 rounded-3xl flex justify-between gap-2 shadow-lg lg:w-[540px]">
+        <div className="bg-slate-100 mx-10 my-5 p-4 rounded-3xl flex justify-between gap-2 shadow-lg lg:w-[540px]">
           <div className="flex items-center gap-2">
             <img
+              alt=""
               className="h-28 w-28"
               src="https://avatars.githubusercontent.com/u/58904411?v=4"
             />
@@ -22,27 +23,27 @@ export default function DevPage1() {
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <Link
-              target="_blank"
-              to="https://www.facebook.com/5H4M1M.HUNT3R.official/"
-            >
+            <Link target="_blank" to="https://www.facebook.com/nasmus1234">
               <img
+                alt=""
                 className="h-8 hover:opacity-60 hover:cursor-pointer ease-in-out transition-all duration-300"
                 src={fbicon}
               />
             </Link>
 
-            <Link to="https://github.com/shamim261" target="_blank">
+            <Link to="https://github.com/nasmus" target="_blank">
               <img
+                alt=""
                 className="h-8 hover:opacity-60 hover:cursor-pointer ease-in-out transition-all duration-300"
                 src={githubicon}
               />
             </Link>
           </div>
         </div>
-        <div className="bg-slate-100 mx-10 my-5 p-2 px-4 rounded-3xl flex justify-between shadow-lg lg:w-[512px]">
+        <div className="bg-slate-100 mx-10 my-5 p-4 rounded-3xl flex justify-between shadow-lg lg:w-[512px]">
           <div className="flex items-center gap-2">
             <img
+              alt=""
               className="h-28 w-28"
               src="https://avatars.githubusercontent.com/u/92126672?v=4"
             />
@@ -57,6 +58,7 @@ export default function DevPage1() {
               to="https://www.facebook.com/5H4M1M.HUNT3R.official/"
             >
               <img
+                alt=""
                 className="h-8 hover:opacity-60 hover:cursor-pointer ease-in-out transition-all duration-300"
                 src={fbicon}
               />
@@ -64,6 +66,7 @@ export default function DevPage1() {
 
             <Link to="https://github.com/shamim261" target="_blank">
               <img
+                alt=""
                 className="h-8 hover:opacity-60 hover:cursor-pointer ease-in-out transition-all duration-300"
                 src={githubicon}
               />
