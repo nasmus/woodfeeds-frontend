@@ -36,7 +36,7 @@ function Product(props) {
 
   return (
     <>
-      <div className="product-card">
+      <div className="product-card hover:shadow-2xl transition-shadow duration-300 shadow-xl">
         <Link to={`/product/${product.slug}`}>
           <LazyLoadImage
             className="main-image"
