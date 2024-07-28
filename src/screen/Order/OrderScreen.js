@@ -83,7 +83,9 @@ function OrderScreen() {
                     Delivered at {order.deliveredAt}
                   </MessageBox>
                 ) : (
-                  <MessageBox variant="danger">Not Delivered</MessageBox>
+                  <MessageBox variant="danger">
+                    {order.orderItems[0].orderStatus}
+                  </MessageBox>
                 )}
               </Card.Body>
             </Card>
