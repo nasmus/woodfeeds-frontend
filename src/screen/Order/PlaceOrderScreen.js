@@ -5,13 +5,13 @@ import Col from "react-bootstrap/esm/Col";
 import Container from "react-bootstrap/esm/Container";
 import ListGroup from "react-bootstrap/esm/ListGroup";
 import Row from "react-bootstrap/esm/Row";
+import ReactPixel from 'react-facebook-pixel';
+import { Helmet } from "react-helmet-async";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Store } from "../../Store";
 import LoadingBox from "../../components/LoadingBox";
 import { getError } from "../../utils";
-import { Helmet } from "react-helmet-async";
-import ReactPixel from 'react-facebook-pixel'
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -58,11 +58,13 @@ function PlaceOrderScreen() {
     ReactPixel.track('Purchase', {value:`${cart.itemsPrice}`,currency:'BDT' ,orderItem: `${cart.cartItems.name}`, paymentMethod:`${cart.paymentMethod}`, itemsPrice:`${cart.itemsPrice}`,shippingPrice:`${cart.shippingPrice}`,totalPrice: `${cart.totalPrice}` })
   }
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
 
   const placeOrderHandler = async () => {
     
     try {
+      setIsSubmitting(true);
       dispatch({ type: "CREATE_REQUEST" });
 
       await Axios.post(
@@ -240,7 +242,7 @@ function PlaceOrderScreen() {
                       <button
                         type="button"
                         onClick={placeOrderHandler}
-                        disabled={cart.cartItems.length === 0}
+                        disabled={cart.cartItems.length === 0 || isSubmitting}
                         className="px-4 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg"
                       >
                         Purchase
